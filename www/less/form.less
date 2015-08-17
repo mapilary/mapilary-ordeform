@@ -1,0 +1,308 @@
+/* common styles */
+@pages: 3;
+@pageHeight: 70em;
+@pageWidth: 58em;
+@formHeight: 52em;
+
+body {
+    color: white;
+    font-size: 10px;
+    font-family: sans-serif;
+}
+
+/* this shoul be applied to * selector */
+ul, form, label, input, textarea, select,  .half {
+    box-sizing: border-box;
+}
+
+/* helpers */
+.clearfix:after {
+    content: " ";
+    display:block;
+    clear:both;
+}
+
+.no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.address-wrapper {
+    position: relative;
+}
+
+.random-address {
+    position: absolute;
+    top: 40px;
+    left: 360px;
+    display: block;
+    height: 18px;
+    width: 18px;
+    background: url(../i/arrows.png) no-repeat #fff;
+}
+
+.btn {
+    display: inline-block;
+    min-width: 150px;
+    height: auto;
+    padding: .8rem;
+    border: 0;
+    font-size: 2em;
+    font-weight: 700;
+	color: #fff;
+	background-color: #ef3e23;
+
+    &.btn-settings {
+        float: right;
+        width: 32px;
+        height: 32px;
+        min-width: 0;
+        padding: 0;
+        margin: 0;
+        background: url(../i/settings.png) no-repeat;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.required {
+    color: red;
+}
+
+.Select {
+    font-size: 1.5em;
+}
+
+.Select-menu-outer {
+    max-height: 140px;
+}
+
+.Select-menu {
+    max-height: 138px;
+}
+
+.notification {
+    height: 2em;
+    font-size: 2em;
+    color: #ef3e23;
+    text-align: center;
+}
+
+.orderform {
+    overflow: hidden;
+    height: @pageHeight;
+    width: @pageWidth;
+    margin: 50px auto 0;
+    color: #777;
+    border-radius: 5px;
+    background-color: #494545;
+
+    h2 {
+        margin-top: 0;
+        padding-bottom: 10px;
+        color: #fff;
+        font-size: 3em;
+        text-align: center;
+        border-bottom: 1px solid #cccccc;
+    }
+
+    label {
+        color: #fff;
+    }
+
+    .headr {
+        padding: 4em 5em 0;
+    }
+
+    &.confirm {
+        .pagewrap {
+            transform: translate3d(-2*@pageWidth, 0, 0);
+        }
+    }
+
+    &.settings {
+        .pagewrap {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    .pagewrap {
+        /*min-height: 745px;*/
+        // height: 100%;
+        width: 100% * @pages;
+        overflow: auto;
+        transition-duration: .25s;
+        transform: translate3d(-@pageWidth, 0, 0);
+    }
+
+    .page {
+        position: relative;
+        // overflow-y: hidden;
+        float: left;
+        height: 100%;
+        width: @pageWidth;
+
+        .form-container {
+            padding: 0 2em;
+            height: @formHeight;
+            ul.form {
+                height: 85%;
+                &.submit {
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    .page-settings {
+        .form-container {
+        }
+    }
+
+    .page-confirmation {
+        text-align: center;
+
+        .headr {
+            margin-top: 15em;
+        }
+
+        h2 {
+            border: 0;
+        }
+    }
+}
+
+ul.form {
+    width: 75%;
+    margin: 0 auto;
+    padding: 0;
+    // padding: 1em;
+    list-style-type: none;
+
+    .row {
+        margin-bottom: 1.5em;
+    }
+
+    .half {
+        width: 50%;
+        float: left;
+        padding-right: 2px;
+    }
+
+    .half+.half {
+        padding-right: 0;
+        padding-left: 2px;
+    }
+
+    label {
+        color: #fff;
+        font-size: 1.6em;
+        text-align: center;
+        display:block;
+        padding: 5px 0 5px;
+    }
+
+    select, input, textarea {
+        margin-left: 0;
+        border: 0;
+        height: auto;
+        font-size: 1.5em;
+    }
+
+    input {
+        width: 100%;
+        padding: .8rem;
+        border-radius: 3px;
+    }
+
+    textarea {
+        width: 100%;
+        height: 8em;
+        padding: 1rem;
+        border: 0;
+        border-radius: 3px;
+    }
+
+    /* iconst for inputs, textareas, selects */
+
+    .icon {
+        background: url(../i/form-icons.png) 0 0 no-repeat #fff;
+        padding-left: 52px;
+    }
+
+    .nameIcon {
+        background-position: -5px -2px;
+    }
+
+    .addressIcon {
+        background-position: -5px -65px;
+    }
+
+    .infoIcon {
+        background-position: -5px -143px;
+    }
+
+    /* textaread override */
+    textarea.infoIcon {
+        background: url(../i/textarea-icon.png) -5px 0 no-repeat #fff;
+    }
+
+    .shopIcon {
+        background-position: -5px -217px;
+    }
+
+    .note {
+        color: #eee;
+        font-size: .7em;
+    }
+
+    & + .note {
+        text-align: center;
+        display: block
+    }
+
+    &.consignee,
+    &.shop {
+        background-color: transparent;
+    }
+
+    /* overriding styles in select.css */
+
+    .Select-control,
+    .Select-placeholder {
+        padding: .8rem 52px .8rem 10px;
+    }
+
+    .Select-placeholder {
+        padding: .8rem 52px .8rem 52px;
+        background: url(../i/form-icons.png) -5px -217px no-repeat #fff;
+    }
+
+    .Select-arrow {
+        top: 19px;
+    }
+
+    .Select-clear {
+        top: 7px
+    }
+
+    .Select-input > input {
+        padding: 0;
+        font-size: 1em;
+    }
+
+    .slideThree input {
+        width: auto;
+    }
+
+    .btn {
+        font-size: 2em;
+        font-weight: 700;
+    }
+}

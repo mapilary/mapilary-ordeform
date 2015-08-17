@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)http://dev.mapilary.com/orderform/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="windows-1250">
+    <link rel="stylesheet" href="http://dev.mapilary.com/orderform/css/main.css">
+    <link rel="stylesheet" href="http://dev.mapilary.com/orderform/bower_components/react-select/dist/default.css">
+    <link rel="stylesheet" href="./orderform_files/css/form.css">
+    <script src="./orderform_files/jquery.js"></script><style type="text/css"></style>
+    <script src="./orderform_files/underscore.js"></script>
+    <script src="./orderform_files/index.js"></script>
+    <script src="./orderform_files/react.js"></script>
+    <script src="./orderform_files/JSXTransformer.js"></script>
+    <script src="./orderform_files/react-input-autosize.js"></script>
+    <script src="./orderform_files/react-select.js"></script>
+  <script>var mapilary = {};
+mapilary.data = {};
+
+mapilary.OrderForm = React.createClass({displayName: "OrderForm",
+  handleSubmit: function(e) {
+    e.preventDefault();
+    var name    = React.findDOMNode(this.refs.name),
+        surname = React.findDOMNode(this.refs.surname),
+        address = React.findDOMNode(this.refs.address),
+        shopIdx = this.refs.shop.state.value,
+        note    = React.findDOMNode(this.refs.note);
+
+    var shop = shops[shopIdx];
+
+    this.props.onOrderSubmit({
+      name: name.value.trim(),
+      surname: surname.value.trim(),
+      shopName: shop[0],
+      shopAddress: [shop[1], shop[2]].join(','),
+      consigneeAddress: address.value.trim(),
+      note: note.value.trim()
+    });
+    // React.findDOMNode(this.refs.consignee).value = '';
+    // React.findDOMNode(this.refs.address).value = '';
+    return;
+  },
+  render: function() {
+    return (
+      React.createElement("form", {className: "orderForm", onSubmit: this.handleSubmit}, 
+        React.createElement("ul", {className: "form consignee"}, 
+          React.createElement("li", {className: "nameRow"}, 
+            React.createElement("label", null, "Zákazník"), 
+            React.createElement("div", null, 
+              React.createElement("input", {type: "text", placeholder: "Meno", defaultValue: "Martin", ref: "name"}), 
+              React.createElement("input", {type: "text", placeholder: "Surname", defaultValue: "Fowler", ref: "surname"})
+            )
+          ), 
+          React.createElement("li", null, 
+            React.createElement("label", null, "Address"), 
+            React.createElement("input", {type: "text", placeholder: "Address", defaultValue: "Gemerská 4, Bratislava", ref: "address"})
+          ), 
+          React.createElement("li", null, React.createElement("textarea", {placeholder: "Note", ref: "note"}))
+        ), 
+        React.createElement("ul", {className: "form shop"}, 
+          React.createElement("li", null, 
+            React.createElement("label", null, "Obchod"), 
+            React.createElement(Select, {name: "shops", options: this.props.shops, ref: "shop"})
+            ), 
+          React.createElement("li", null, React.createElement("input", {className: "btn order-btn", type: "submit", value: "Objednaj"}))
+        )
+      )
+    );
+  }
+});
+
+mapilary.ShopBox = React.createClass({displayName: "ShopBox",
+  getInitialState: function() {
+    return { shops: [] };
+  },
+  handleOrderSubmit: function(order) {
+    var url = 'http://localhost:8887/postorder';
+    console.log(order);
+    autoDispatch(order)
+    .done(function () {
+      console.log('Objednavka uspesne odoslana');
+    })
+    .fail(function (jqXHR, status, err) {
+      console.error('Odosielanie objednavky zlyhalo: ', err.toString());
+    });
+  },
+  componentDidMount: function() {
+    var that = this;
+    var shopsSelect = shops.map(function (shop, idx) {
+      return {
+        value: idx,
+        label: shop[0]
+      };
+    });
+    that.setState({ shops: shopsSelect });
+  },
+  render: function() {
+    return (
+      React.createElement("div", {className: "shopBox"}, 
+        React.createElement("h1", null, "Nová objednávka"), 
+        React.createElement(mapilary.OrderForm, {shops: this.state.shops, onOrderSubmit: this.handleOrderSubmit})
+      )
+    );
+  }
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidHJhbnNmb3JtZWQuanMiLCJzb3VyY2VzIjpbIm9yZGVyZm9ybS9qc3gvc2hvcHMuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsSUFBSSxRQUFRLEdBQUcsRUFBRSxDQUFDO0FBQ2xCLFFBQVEsQ0FBQyxJQUFJLEdBQUcsRUFBRSxDQUFDOztBQUVuQix3Q0FBd0MseUJBQUE7RUFDdEMsWUFBWSxFQUFFLFNBQVMsQ0FBQyxFQUFFO0lBQ3hCLENBQUMsQ0FBQyxjQUFjLEVBQUUsQ0FBQztJQUNuQixJQUFJLElBQUksTUFBTSxLQUFLLENBQUMsV0FBVyxDQUFDLElBQUksQ0FBQyxJQUFJLENBQUMsSUFBSSxDQUFDO1FBQzNDLE9BQU8sR0FBRyxLQUFLLENBQUMsV0FBVyxDQUFDLElBQUksQ0FBQyxJQUFJLENBQUMsT0FBTyxDQUFDO1FBQzlDLE9BQU8sR0FBRyxLQUFLLENBQUMsV0FBVyxDQUFDLElBQUksQ0FBQyxJQUFJLENBQUMsT0FBTyxDQUFDO1FBQzlDLE9BQU8sR0FBRyxJQUFJLENBQUMsSUFBSSxDQUFDLElBQUksQ0FBQyxLQUFLLENBQUMsS0FBSztBQUM1QyxRQUFRLElBQUksTUFBTSxLQUFLLENBQUMsV0FBVyxDQUFDLElBQUksQ0FBQyxJQUFJLENBQUMsSUFBSSxDQUFDLENBQUM7O0FBRXBELElBQUksSUFBSSxJQUFJLEdBQUcsS0FBSyxDQUFDLE9BQU8sQ0FBQyxDQUFDOztJQUUxQixJQUFJLENBQUMsS0FBSyxDQUFDLGFBQWEsQ0FBQztNQUN2QixJQUFJLEVBQUUsSUFBSSxDQUFDLEtBQUssQ0FBQyxJQUFJLEVBQUU7TUFDdkIsT0FBTyxFQUFFLE9BQU8sQ0FBQyxLQUFLLENBQUMsSUFBSSxFQUFFO01BQzdCLFFBQVEsRUFBRSxJQUFJLENBQUMsQ0FBQyxDQUFDO01BQ2pCLFdBQVcsRUFBRSxDQUFDLElBQUksQ0FBQyxDQUFDLENBQUMsRUFBRSxJQUFJLENBQUMsQ0FBQyxDQUFDLENBQUMsQ0FBQyxJQUFJLENBQUMsR0FBRyxDQUFDO01B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QUE7TUFDTjtHQUNIO0NBQ0YsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbInZhciBtYXBpbGFyeSA9IHt9O1xubWFwaWxhcnkuZGF0YSA9IHt9O1xuXG5tYXBpbGFyeS5PcmRlckZvcm0gPSBSZWFjdC5jcmVhdGVDbGFzcyh7XG4gIGhhbmRsZVN1Ym1pdDogZnVuY3Rpb24oZSkge1xuICAgIGUucHJldmVudERlZmF1bHQoKTtcbiAgICB2YXIgbmFtZSAgICA9IFJlYWN0LmZpbmRET01Ob2RlKHRoaXMucmVmcy5uYW1lKSxcbiAgICAgICAgc3VybmFtZSA9IFJlYWN0LmZpbmRET01Ob2RlKHRoaXMucmVmcy5zdXJuYW1lKSxcbiAgICAgICAgYWRkcmVzcyA9IFJlYWN0LmZpbmRET01Ob2RlKHRoaXMucmVmcy5hZGRyZXNzKSxcbiAgICAgICAgc2hvcElkeCA9IHRoaXMucmVmcy5zaG9wLnN0YXRlLnZhbHVlLFxuICAgICAgICBub3RlICAgID0gUmVhY3QuZmluZERPTU5vZGUodGhpcy5yZWZzLm5vdGUpO1xuXG4gICAgdmFyIHNob3AgPSBzaG9wc1tzaG9wSWR4XTtcblxuICAgIHRoaXMucHJvcHMub25PcmRlclN1Ym1pdCh7XG4gICAgICBuYW1lOiBuYW1lLnZhbHVlLnRyaW0oKSxcbiAgICAgIHN1cm5hbWU6IHN1cm5hbWUudmFsdWUudHJpbSgpLFxuICAgICAgc2hvcE5hbWU6IHNob3BbMF0sXG4gICAgICBzaG9wQWRkcmVzczogW3Nob3BbMV0sIHNob3BbMl1dLmpvaW4oJywnKSxcbiAgICAgIGNvbnNpZ25lZUFkZHJlc3M6IGFkZHJlc3MudmFsdWUudHJpbSgpLFxuICAgICAgbm90ZTogbm90ZS52YWx1ZS50cmltKClcbiAgICB9KTtcbiAgICAvLyBSZWFjdC5maW5kRE9NTm9kZSh0aGlzLnJlZnMuY29uc2lnbmVlKS52YWx1ZSA9ICcnO1xuICAgIC8vIFJlYWN0LmZpbmRET01Ob2RlKHRoaXMucmVmcy5hZGRyZXNzKS52YWx1ZSA9ICcnO1xuICAgIHJldHVybjtcbiAgfSxcbiAgcmVuZGVyOiBmdW5jdGlvbigpIHtcbiAgICByZXR1cm4gKFxuICAgICAgPGZvcm0gY2xhc3NOYW1lPVwib3JkZXJGb3JtXCIgb25TdWJtaXQ9e3RoaXMuaGFuZGxlU3VibWl0fT5cbiAgICAgICAgPHVsIGNsYXNzTmFtZT1cImZvcm0gY29uc2lnbmVlXCI+XG4gICAgICAgICAgPGxpIGNsYXNzTmFtZT1cIm5hbWVSb3dcIj5cbiAgICAgICAgICAgIDxsYWJlbD5aw6FrYXpuw61rPC9sYWJlbD5cbiAgICAgICAgICAgIDxkaXY+XG4gICAgICAgICAgICAgIDxpbnB1dCB0eXBlPVwidGV4dFwiIHBsYWNlaG9sZGVyPVwiTWVub1wiIGRlZmF1bHRWYWx1ZT1cIk1hcnRpblwiIHJlZj1cIm5hbWVcIiAvPlxuICAgICAgICAgICAgICA8aW5wdXQgdHlwZT1cInRleHRcIiBwbGFjZWhvbGRlcj1cIlByaWV6dmlza29cIiBkZWZhdWx0VmFsdWU9XCJGb3dsZXJcIiByZWY9XCJzdXJuYW1lXCIgLz5cbiAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgIDwvbGk+XG4gICAgICAgICAgPGxpPlxuICAgICAgICAgICAgPGxhYmVsPlVsaWNhPC9sYWJlbD5cbiAgICAgICAgICAgIDxpbnB1dCB0eXBlPVwidGV4dFwiIHBsYWNlaG9sZGVyPVwiQWRyZXNhXCIgZGVmYXVsdFZhbHVlPVwiR2VtZXJza8OhIDQsIEJyYXRpc2xhdmFcIiByZWY9XCJhZGRyZXNzXCIgLz5cbiAgICAgICAgICA8L2xpPlxuICAgICAgICAgIDxsaT48dGV4dGFyZWEgcGxhY2Vob2xkZXI9XCJQb3puw6Fta2FcIiByZWY9XCJub3RlXCIgLz48L2xpPlxuICAgICAgICA8L3VsPlxuICAgICAgICA8dWwgY2xhc3NOYW1lPVwiZm9ybSBzaG9wXCI+XG4gICAgICAgICAgPGxpPlxuICAgICAgICAgICAgPGxhYmVsPk9iY2hpZDwvbGFiZWw+XG4gICAgICAgICAgICA8U2VsZWN0IG5hbWU9XCJzaG9wc1wiIG9wdGlvbnM9e3RoaXMucHJvcHMuc2hvcHN9IHJlZj1cInNob3BcIiAvPlxuICAgICAgICAgICAgPC9saT5cbiAgICAgICAgICA8bGk+PGlucHV0IGNsYXNzTmFtZT1cImJ0biBvcmRlci1idG5cIiB0eXBlPVwic3VibWl0XCIgdmFsdWU9XCJPYmplZG5halwiIC8+PC9saT5cbiAgICAgICAgPC91bD5cbiAgICAgIDwvZm9ybT5cbiAgICApO1xuICB9XG59KTtcblxubWFwaWxhcnkuU2hvcEJveCA9IFJlYWN0LmNyZWF0ZUNsYXNzKHtcbiAgZ2V0SW5pdGlhbFN0YXRlOiBmdW5jdGlvbigpIHtcbiAgICByZXR1cm4geyBzaG9wczogW10gfTtcbiAgfSxcbiAgaGFuZGxlT3JkZXJTdWJtaXQ6IGZ1bmN0aW9uKG9yZGVyKSB7XG4gICAgdmFyIHVybCA9ICdodHRwOi8vbG9jYWxob3N0Ojg4ODcvcG9zdG9yZGVyJztcbiAgICBjb25zb2xlLmxvZyhvcmRlcik7XG4gICAgYXV0b0Rpc3BhdGNoKG9yZGVyKVxuICAgIC5kb25lKGZ1bmN0aW9uICgpIHtcbiAgICAgIGNvbnNvbGUubG9nKCdPYmplZG5hdmthIHVzcGVzbmUgb2Rvc2xhbmEnKTtcbiAgICB9KVxuICAgIC5mYWlsKGZ1bmN0aW9uIChqcVhIUiwgc3RhdHVzLCBlcnIpIHtcbiAgICAgIGNvbnNvbGUuZXJyb3IoJ09kb3NpZWxhbmllIG9iamVkbmF2a3kgemx5aGFsbzogJywgZXJyLnRvU3RyaW5nKCkpO1xuICAgIH0pO1xuICB9LFxuICBjb21wb25lbnREaWRNb3VudDogZnVuY3Rpb24oKSB7XG4gICAgdmFyIHRoYXQgPSB0aGlzO1xuICAgIHZhciBzaG9wc1NlbGVjdCA9IHNob3BzLm1hcChmdW5jdGlvbiAoc2hvcCwgaWR4KSB7XG4gICAgICByZXR1cm4ge1xuICAgICAgICB2YWx1ZTogaWR4LFxuICAgICAgICBsYWJlbDogc2hvcFswXVxuICAgICAgfTtcbiAgICB9KTtcbiAgICB0aGF0LnNldFN0YXRlKHsgc2hvcHM6IHNob3BzU2VsZWN0IH0pO1xuICB9LFxuICByZW5kZXI6IGZ1bmN0aW9uKCkge1xuICAgIHJldHVybiAoXG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cInNob3BCb3hcIj5cbiAgICAgICAgPGgxPk5vdsOhIG9iamVkbsOhdmthPC9oMT5cbiAgICAgICAgPG1hcGlsYXJ5Lk9yZGVyRm9ybSBzaG9wcz17dGhpcy5zdGF0ZS5zaG9wc30gb25PcmRlclN1Ym1pdD17dGhpcy5oYW5kbGVPcmRlclN1Ym1pdH0gLz5cbiAgICAgIDwvZGl2PlxuICAgICk7XG4gIH1cbn0pOyJdfQ==</script><script>
+      React.render(
+        React.createElement(mapilary.ShopBox, null),
+        document.getElementById('content')
+      );
+    
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidHJhbnNmb3JtZWQuanMiLCJzb3VyY2VzIjpbIklubGluZSBKU1ggc2NyaXB0Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO01BQ00sS0FBSyxDQUFDLE1BQU07UUFDVixvQkFBQyxnQkFBZ0IsRUFBQSxJQUFBLENBQUcsQ0FBQTtRQUNwQixRQUFRLENBQUMsY0FBYyxDQUFDLFNBQVMsQ0FBQztPQUNuQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICBSZWFjdC5yZW5kZXIoXG4gICAgICAgIDxtYXBpbGFyeS5TaG9wQm94IC8+LFxuICAgICAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnY29udGVudCcpXG4gICAgICApO1xuICAgICJdfQ==</script></head>
+  <body>
+    <div id="content">
+        
+        <div class="shopBox" data-reactid=".0">
+            
+            <h1 data-reactid=".0.0">New Order</h1>
+            
+            
+                <form class="orderForm" data-reactid=".0.1">
+                    <ul class="form consignee" data-reactid=".0.1.0">
+                        <li class="nameRow clearfix" data-reactid=".0.1.0.0">
+                            <div class="half">
+                              <label for="name">Name<span class="required">*</span></label>
+                              <input name="name"  class="icon nameIcon" type="text" placeholder="Name" defaultValue="Martin" ref="name" />
+                            </div>
+                            <div class="half">
+                              <label for="surname">Surname</label>
+                              <input name="surname" type="text" placeholder="Surname" defaultValue="Fowler" ref="surname" />
+                            </div>
+                        </li>
+                        <li data-reactid=".0.1.0.1">
+                            <label data-reactid=".0.1.0.1.0">Address</label>
+                            <input  class="icon addressIcon" type="text" placeholder="Address" value="Gemerská 4, Bratislava" data-reactid=".0.1.0.1.1">
+                        </li>
+                        <li data-reactid=".0.1.0.2">
+                            <label for="note">Note</label>
+                            <textarea  class=" icon infoIcon" placeholder="Note" data-reactid=".0.1.0.2.0"></textarea>
+                        </li>
+                    </ul>
+                    <ul class="form shop" data-reactid=".0.1.1">
+                        <li data-reactid=".0.1.1.0">
+                            <label data-reactid=".0.1.1.0.0">Obchod</label>
+                            <div class="Select is-searchable" data-reactid=".0.1.1.0.1">
+                                <input type="hidden" name="shops" value="" data-reactid=".0.1.1.0.1.0"><div class="Select-control" data-reactid=".0.1.1.0.1.1">
+                                <div class="Select-placeholder" data-reactid=".0.1.1.0.1.1.0:$placeholder">Select...
+                                </div>
+                                <div class="Select-input" style="display:inline-block;" data-reactid=".0.1.1.0.1.1.1">
+                                    <input value="" tabindex="0" style="width:5px;" data-reactid=".0.1.1.0.1.1.1.0">
+                                    <div style="position: absolute; visibility: hidden; height: 0px; width: 0px; overflow: scroll; white-space: nowrap; font-size: 15px; font-family: sans-serif;" data-reactid=".0.1.1.0.1.1.1.1">
+                                    </div>
+                                </div>
+                                    <span class="Select-arrow" data-reactid=".0.1.1.0.1.1.2">
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                        <li data-reactid=".0.1.1.1">
+                            <input class="btn order-btn" type="submit" value="Order now" data-reactid=".0.1.1.1.0">
+                        </li>
+                    </ul>
+            </form>
+        </div>
+      
+      
+      </div>
+    <script src="./orderform_files/shops.js"></script>
+    <script src="./orderform_files/dispatch.js"></script>
+    <script type="text/jsx" src="./orderform_files/shops(1).js"></script>
+    <script type="text/jsx">
+      React.render(
+        <mapilary.ShopBox />,
+        document.getElementById('content')
+      );
+    </script>
+  
+</body></html>

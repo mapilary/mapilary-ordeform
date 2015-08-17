@@ -1,0 +1,198 @@
+/* common styles */
+
+body {
+    font-family: Sans-Serif;
+}
+
+/* this shoul be applied to * selector */
+ul, form, label, input, textarea, select,  .half {
+    box-sizing: border-box;
+}
+
+/* helpers */
+.clearfix:after {
+    content: " ";
+    display:block;
+    clear:both;
+}
+
+.required {
+   color: red;
+}
+
+.note {
+    color: #eee;
+    font-size: 13px;
+}
+
+
+/* shopbox styles */
+
+.shopBox {
+    margin: 50px auto 0;
+    padding: 50px;
+    width: 480px;
+    background-color:#494545;
+    border-radius: 5px;
+}
+
+    .shopBox h1 {
+        margin-top: 0;
+        padding-bottom: 10px;
+        color: #fff;
+        font-size: 30px;
+        text-align: center;
+        border-bottom: 1px solid #cccccc;
+    }
+
+    ul.form {
+        width: 75%;
+        margin: 0 auto;    
+    }
+
+        ul.form > li {
+            padding-bottom: 5px;
+        }
+
+        ul.form .half {
+            width: 50%;
+            float: left;
+            padding-right: 2px;
+        }
+
+            ul.form .half+.half {
+                padding-right: 0;
+                padding-left: 2px;
+            }
+
+        ul.form label {
+            color: #fff;
+            font-size: 16px;
+            text-align: center;
+            display:block;
+            padding: 5px 0 5px;
+        }
+
+        ul.form input {
+            width: 100%;
+            padding: .8rem;
+            color: #777;
+            border-radius: 3px;
+        }
+
+        ul.form textarea {
+            width: 100%;
+            border-radius: 3px;
+            padding: 1rem;
+        }
+
+            /* iconst for inputs, textareas, selects */
+
+            ul.form .icon {
+                background: url(../i/form-icons.png) 0 0 no-repeat #fff;
+                padding-left: 52px;
+            }
+
+            ul.form .nameIcon {
+                background-position: -5px -2px;
+            }
+
+            ul.form .addressIcon {
+                background-position: -5px -65px;
+            }
+
+            ul.form .infoIcon {
+                background-position: -5px -143px;
+            }
+
+                /* textaread override */
+                ul.form textarea.infoIcon {
+                    background: url(../i/textarea-icon.png) -5px 0 no-repeat #fff;
+                }
+
+            ul.form .shopIcon {
+                background-position: -5px -217px;
+            }
+
+
+
+
+
+
+        ul.form .error {
+            box-shadow: 0px 0px 1px 2px red;
+            color: red;
+        }
+
+        ul.form + .note {
+            text-align: center;
+            display: block
+        }
+
+        
+
+    
+
+ul.form .btn {
+    display: inline-block;
+    min-width: 150px;
+    height: auto;
+    padding: .8rem;
+    font-size: 20px;
+    font-weight: 700;
+    border: 0;
+} 
+
+    .btn.order-btn {
+        background-color: #ef3e23;
+        color: #fff;
+        margin-top: 15px;
+    }
+
+
+/* overriding styles in main.css */
+
+ul.form {
+    padding: 0px;
+}
+
+ul.form.consignee,
+ul.form.shop {
+    background-color: transparent;
+}
+
+ul.form select, input {
+    margin-left: 0;
+    border: 0;
+    height: auto;
+}
+
+/* overriding styles in select.css */
+
+ul.form .Select-control,
+ul.form .Select-placeholder {
+    padding: .8rem 52px .8rem 10px;
+}
+
+ul.form .Select-placeholder {
+    padding: .8rem 52px .8rem 52px;
+    background: url(../i/form-icons.png) -5px -217px no-repeat #fff;
+}
+
+    ul.form .Select-arrow {
+        top: 19px;
+    }
+
+    ul.form .Select-clear {
+        top: 7px
+    }
+
+    ul.form .Select-input > input {
+        padding: 0;
+    }
+
+
+
+
+
+    
