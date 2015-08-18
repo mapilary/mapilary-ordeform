@@ -3,9 +3,11 @@
 @pageHeight: 70em;
 @pageWidth: 58em;
 @formHeight: 52em;
+@white: #fff;
+@red: #ef3e23;
+@grey: #494545;
 
 body {
-    color: white;
     font-size: 10px;
     font-family: sans-serif;
 }
@@ -42,7 +44,7 @@ ul, form, label, input, textarea, select,  .half {
     display: block;
     height: 18px;
     width: 18px;
-    background: url(../i/arrows.png) no-repeat #fff;
+    background: url(../i/arrows.png) no-repeat @white;
 }
 
 .btn {
@@ -53,8 +55,8 @@ ul, form, label, input, textarea, select,  .half {
     border: 0;
     font-size: 2em;
     font-weight: 700;
-	color: #fff;
-	background-color: #ef3e23;
+    color: @white;
+    background-color: @red;
 
     &.btn-settings {
         float: right;
@@ -90,7 +92,7 @@ ul, form, label, input, textarea, select,  .half {
 .notification {
     height: 2em;
     font-size: 2em;
-    color: #ef3e23;
+    color: @red;
     text-align: center;
 }
 
@@ -99,21 +101,29 @@ ul, form, label, input, textarea, select,  .half {
     height: @pageHeight;
     width: @pageWidth;
     margin: 50px auto 0;
-    color: #777;
     border-radius: 5px;
-    background-color: #494545;
+    background-color: @grey;
 
     h2 {
         margin-top: 0;
         padding-bottom: 10px;
-        color: #fff;
+        color: @white;
         font-size: 3em;
         text-align: center;
         border-bottom: 1px solid #cccccc;
     }
 
+    h3 {
+        color: @white;
+        font-size: 2em;
+    }
+
     label {
-        color: #fff;
+        color: @white;
+    }
+
+    label, input {
+        font-family: sans-serif;
     }
 
     .headr {
@@ -162,6 +172,12 @@ ul, form, label, input, textarea, select,  .half {
 
     .page-settings {
         .form-container {
+            .voting {
+                float: right;
+            }
+            .section-head {
+                float: left;
+            }
         }
     }
 
@@ -201,7 +217,7 @@ ul.form {
     }
 
     label {
-        color: #fff;
+        color: @white;
         font-size: 1.6em;
         text-align: center;
         display:block;
@@ -221,6 +237,11 @@ ul.form {
         border-radius: 3px;
     }
 
+    input:disabled {
+        color: #dddddd;
+        background: #dddddd;
+    }
+
     textarea {
         width: 100%;
         height: 8em;
@@ -232,7 +253,7 @@ ul.form {
     /* iconst for inputs, textareas, selects */
 
     .icon {
-        background: url(../i/form-icons.png) 0 0 no-repeat #fff;
+        background: url(../i/form-icons.png) 0 0 no-repeat @white;
         padding-left: 52px;
     }
 
@@ -250,7 +271,7 @@ ul.form {
 
     /* textaread override */
     textarea.infoIcon {
-        background: url(../i/textarea-icon.png) -5px 0 no-repeat #fff;
+        background: url(../i/textarea-icon.png) -5px 0 no-repeat @white;
     }
 
     .shopIcon {
@@ -281,7 +302,7 @@ ul.form {
 
     .Select-placeholder {
         padding: .8rem 52px .8rem 52px;
-        background: url(../i/form-icons.png) -5px -217px no-repeat #fff;
+        background: url(../i/form-icons.png) -5px -217px no-repeat @white;
     }
 
     .Select-arrow {
@@ -297,8 +318,28 @@ ul.form {
         font-size: 1em;
     }
 
-    .slideThree input {
-        width: auto;
+    .slideThree {
+        background: @white;
+
+        &:before {
+            color: @red;
+        }
+
+        &:after {
+            color: @grey;
+        }
+
+        label {
+            background: -webkit-linear-gradient(top, #B0B0AD 0%, #94988E 40%, #666864 100%);
+            background: -moz-linear-gradient(top, #B0B0AD 0%, #94988E 40%, #666864 100%);
+            background: -o-linear-gradient(top, #B0B0AD 0%, #94988E 40%, #666864 100%);
+            background: -ms-linear-gradient(top, #B0B0AD 0%, #94988E 40%, #666864 100%);
+            background: linear-gradient(top, #B0B0AD 0%, #94988E 40%, #666864 100%);
+        }
+
+        input {
+            width: auto;
+        }
     }
 
     .btn {

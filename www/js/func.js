@@ -1,9 +1,7 @@
 (function (mapilary) {
-    function buildOrder (request) {
+    function buildDelivery (request) {
         var now = new Date();
         return {
-            deadline: request.deadline,
-            onlinesince: request.onlinesince,
             delivery: {
                 duration: 3600,
                 note: request.note,
@@ -24,7 +22,8 @@
     }
 
     function autoAssign (request, options) {
-        var order = buildOrder(request);
+        var order = buildDelivery(request);
+        order.deadline = request.deadline;
         console.log(order, options);
         return $.ajax(options.baseUrl + 'autoAssign', {
             data: JSON.stringify(order),
@@ -37,7 +36,10 @@
     }
 
     function publishDispatch (request, options) {
-        var order = buildOrder(request);
+        var order = buildDelivery(request);
+        order.deadline = request.deadline;
+        order.onlinesince = request.onlinesince;
+        order.timeout = request.timeout;
         console.log(order, options);
         return $.ajax(options.baseUrl + 'publishDispatch', {
             data: JSON.stringify(order),

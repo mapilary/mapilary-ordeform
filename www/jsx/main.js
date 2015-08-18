@@ -10,11 +10,16 @@
             page: 'form'
         };
       },
+      getNewTimeout: function (now) {
+          return moment(now || new Date()).add(10, 'm').toDate();
+      },
       getDefaultProps: function () {
+          var now = moment();
           return {
-              deadline: moment().add(1, 'h').toDate(),
+              deadline: moment(now).add(1, 'h').toDate(),
               voting: false,
-              onlineSince: new Date()
+              onlineSince: new Date(),
+              timeout: 10
           };
       },
       handleOrderSubmit: function(order, options) {
@@ -31,6 +36,7 @@
 
         var result;
         if (this.props.voting) {
+            order.timeout = moment().add(this.props.timeout, 'm').toDate();
             order.onlinesince = this.props.onlineSince;
             result = mapilary.fnc.publishDispatch(order, {
                 accessToken: accessToken,
@@ -67,12 +73,12 @@
         var classes = ['orderform', this.state.page].join(' ');
         return (
           <div className={classes}>
-            <Spinner ref="spinner"/>
             <div className="pagewrap">
-                <SettingsPage onSet={this.handleSettings} deadline={this.props.deadline} onlineSince={this.props.onlineSince}/>
+                <SettingsPage onSet={this.handleSettings} deadline={this.props.deadline} onlineSince={this.props.onlineSince} timeout={this.props.timeout} />
                 <OrderPage baseUrl={this.state.baseUrl} onSettingsBtnClick={this.showSettingsPage} onOrderSubmit={this.handleOrderSubmit} />
                 <ConfirmationPage onBackBtnClick={this.showFormPage} />
             </div>
+            <Spinner ref="spinner"/>
           </div>
         );
       }
