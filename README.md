@@ -1,4 +1,4 @@
-# mapilary-delivery-orderform
+# mapilary-orderform
 simulation of last step of checkout process
 
 All files are within www folder.
