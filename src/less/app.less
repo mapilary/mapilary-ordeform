@@ -1,7 +1,7 @@
 /* common styles */
 @pages: 3;
-@pageHeight: 70em;
-@pageWidth: 58em;
+@pageHeight: 84em;
+@pageWidth: 60em;
 @formHeight: 52em;
 @white: #fff;
 @red: #ef3e23;
@@ -39,33 +39,43 @@ ul, form, label, input, textarea, select,  .half {
 
 .random-address {
     position: absolute;
-    top: 40px;
-    left: 360px;
+    top: 4em;
+    left: 36em;
     display: block;
-    height: 18px;
-    width: 18px;
-    background: url(../i/arrows.png) no-repeat @white;
+    height: 1.8em;
+    width: 1.8em;
+    background: url("../i/arrows.png") no-repeat @white;
 }
 
 .btn {
     display: inline-block;
-    min-width: 150px;
+    min-width: 15em;
     height: auto;
     padding: .8rem;
     border: 0;
-    font-size: 2em;
+    font-size: 3em;
     font-weight: 700;
     color: @white;
     background-color: @red;
 
     &.btn-settings {
         float: right;
-        width: 32px;
-        height: 32px;
+        width: 3.2em;
+        height: 3.2em;
         min-width: 0;
         padding: 0;
         margin: 0;
-        background: url(../i/settings.png) no-repeat;
+        background: url("../i/settings.png") no-repeat;
+    }
+
+    &.btn-logout {
+        float: right;
+        width: 1.2em;
+        height: 3.2em;
+        min-width: 0;
+        padding: 0;
+        margin: 0;
+        background: url("../i/logout.png") no-repeat;
     }
 }
 
@@ -82,11 +92,11 @@ ul, form, label, input, textarea, select,  .half {
 }
 
 .Select-menu-outer {
-    max-height: 140px;
+    max-height: 14em;
 }
 
 .Select-menu {
-    max-height: 138px;
+    max-height: 13.8em;
 }
 
 .notification {
@@ -98,15 +108,16 @@ ul, form, label, input, textarea, select,  .half {
 
 .orderform {
     overflow: hidden;
+    position: relative;
     height: @pageHeight;
     width: @pageWidth;
-    margin: 50px auto 0;
-    border-radius: 5px;
+    margin: 5em auto 0;
+    border-radius: .5em;
     background-color: @grey;
 
     h2 {
         margin-top: 0;
-        padding-bottom: 10px;
+        padding-bottom: 1em;
         color: @white;
         font-size: 3em;
         text-align: center;
@@ -142,13 +153,20 @@ ul, form, label, input, textarea, select,  .half {
         }
     }
 
+    &.login {
+        .page-login {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
     .pagewrap {
-        /*min-height: 745px;*/
-        // height: 100%;
+        height: 100%;
         width: 100% * @pages;
-        overflow: auto;
+        // overflow: auto;
+        position: relative;
         transition-duration: .25s;
         transform: translate3d(-@pageWidth, 0, 0);
+        z-index: 1;
     }
 
     .page {
@@ -160,12 +178,42 @@ ul, form, label, input, textarea, select,  .half {
 
         .form-container {
             padding: 0 2em;
-            height: @formHeight;
+            // height: @formHeight;
             ul.form {
-                height: 85%;
+                // height: 85%;
                 &.submit {
-                    height: auto;
+                    // height: auto;
+                    // margin: 4em auto;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    width: 100%;
+                    padding: 0 2em;
+
+                    .row {
+                        margin: 0 auto;
+                        margin-bottom: 3em;
+                        width: 75%;
+                    }
                 }
+            }
+        }
+    }
+
+    .page-login {
+        position: absolute;
+        background-color: @grey;
+        height: 100%;
+        width: 100%;
+        border-radius: .5em;
+        transition-duration: .5s;
+        transform: translate3d(0, -@pageHeight, 0);
+        z-index: 2;
+
+        .form-container {
+            .submit {
+                margin-top: 10em;
             }
         }
     }
@@ -209,6 +257,10 @@ ul.form {
         width: 50%;
         float: left;
         padding-right: 2px;
+
+        .input-icon {
+            padding-left: 4.2em;
+        }
     }
 
     .half+.half {
@@ -218,8 +270,8 @@ ul.form {
 
     label {
         color: @white;
-        font-size: 1.6em;
-        text-align: center;
+        font-size: 1.4em;
+        text-align: left;
         display:block;
         padding: 5px 0 5px;
     }
@@ -235,6 +287,7 @@ ul.form {
         width: 100%;
         padding: .8rem;
         border-radius: 3px;
+        outline: none;
     }
 
     input:disabled {
@@ -248,34 +301,77 @@ ul.form {
         padding: 1rem;
         border: 0;
         border-radius: 3px;
+
+        &.icon {
+            padding-left: 4em;
+        }
+    }
+
+    .input-group {
+        display: table;
+        position: relative;
+        width: 100%;
+        border-collapse: separate;
+
+        .input-icon {
+            display: table-cell;
+            border-radius: 3px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .form-control {
+            display: table-cell;
+        }
+
+        input {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
     }
 
     /* iconst for inputs, textareas, selects */
 
     .icon {
-        background: url(../i/form-icons.png) 0 0 no-repeat @white;
-        padding-left: 52px;
+        background: url("../i/form-icons.png") 0 0 no-repeat @white;
+        padding-left: 2.4em;
     }
 
-    .nameIcon {
+    .name-icon {
         background-position: -5px -2px;
     }
 
-    .addressIcon {
+    .address-icon {
         background-position: -5px -65px;
     }
 
-    .infoIcon {
+    .info-icon {
         background-position: -5px -143px;
     }
 
     /* textaread override */
-    textarea.infoIcon {
-        background: url(../i/textarea-icon.png) -5px 0 no-repeat @white;
+    textarea.info-icon {
+        background: url("../i/textarea-icon.png") -5px 0 no-repeat @white;
     }
 
-    .shopIcon {
+    .shop-icon {
         background-position: -5px -217px;
+    }
+
+    .phone-nr-icon {
+        background-position: -5px -293px;
+    }
+
+    .email-icon {
+        background-position: -5px -355px;
+    }
+
+    .tracking-nr-icon {
+        background-position: -5px -411px;
+    }
+
+    .padlock-icon {
+        background-position: -5px -462px;
     }
 
     .note {
@@ -297,12 +393,12 @@ ul.form {
 
     .Select-control,
     .Select-placeholder {
-        padding: .8rem 52px .8rem 10px;
+        padding: .8rem 5.2em .8rem 10px;
     }
 
     .Select-placeholder {
-        padding: .8rem 52px .8rem 52px;
-        background: url(../i/form-icons.png) -5px -217px no-repeat @white;
+        padding: .8rem 5.2em .8rem 5.2em;
+        background: url("../i/form-icons.png") -5px -217px no-repeat @white;
     }
 
     .Select-arrow {
@@ -342,8 +438,19 @@ ul.form {
         }
     }
 
+    .geosuggest__input {
+        .icon;
+        .address-icon;
+
+        padding-left: 3.8em;
+    }
+
     .btn {
         font-size: 2em;
         font-weight: 700;
     }
+}
+
+.icon-credits {
+    text-align: center;
 }
