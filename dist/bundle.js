@@ -12251,21 +12251,21 @@
 	                    React.createElement("label", null, "Username"), 
 	                    React.createElement("div", {className: "input-group"}, 
 	                        React.createElement("span", {className: "icon input-icon name-icon"}), 
-	                        React.createElement("input", {className: "form-control username", type: "text", placeholder: "username", defaultValue: this.props.username, ref: "username", autoFocus: "true", required: "true"})
+	                        React.createElement("input", {name: "username", className: "form-control username", type: "text", placeholder: "username", defaultValue: this.props.username, ref: "username", autoFocus: "true", required: "true"})
 	                    )
 	                  ), 
 	                  React.createElement("li", {className: "row"}, 
 	                    React.createElement("label", null, "Company"), 
 	                    React.createElement("div", {className: "input-group"}, 
 	                        React.createElement("span", {className: "icon input-icon address-icon"}), 
-	                        React.createElement("input", {className: "form-control company", type: "text", placeholder: "company", defaultValue: this.props.company, ref: "company", required: "false"})
+	                        React.createElement("input", {name: "company", className: "form-control company", type: "text", placeholder: "company", defaultValue: this.props.company, ref: "company", required: "false"})
 	                    )
 	                  ), 
 	                React.createElement("li", {className: "row"}, 
 	                  React.createElement("label", null, "Password"), 
 	                  React.createElement("div", {className: "input-group"}, 
 	                    React.createElement("span", {className: "icon input-icon padlock-icon"}), 
-	                    React.createElement("input", {className: "form-control password", type: "password", placeholder: "password", ref: "password", required: "true"})
+	                    React.createElement("input", {name: "password", className: "form-control password", type: "password", placeholder: "password", ref: "password", required: "true"})
 	                  )
 	                )
 	              ), 
@@ -12508,7 +12508,7 @@
 	              React.createElement("label", null, "Tracking Nr."), 
 	              React.createElement("div", {className: "input-group"}, 
 	                React.createElement("span", {className: "icon input-icon tracking-nr-icon"}), 
-	                React.createElement("input", {className: "form-control tracking-nr", type: "text", placeholder: "PP445511", ref: "trackingNr", autoFocus: "true", required: "true"})
+	                React.createElement("input", {name: "tracking-nr", className: "form-control tracking-nr", type: "text", placeholder: "PP445511", ref: "trackingNr", autoFocus: "true", required: "true"})
 	              )
 	            ), 
 	          React.createElement("li", {className: "row row-name clearfix"}, 
@@ -12516,12 +12516,12 @@
 	              React.createElement("label", null, "Name"), 
 	              React.createElement("div", {className: "input-group"}, 
 	                React.createElement("span", {className: "icon input-icon name-icon"}), 
-	                React.createElement("input", {className: "form-control name", type: "text", placeholder: "John", ref: "name", required: "true"})
+	                React.createElement("input", {name: "name", className: "form-control name", type: "text", placeholder: "John", ref: "name", required: "true"})
 	              )
 	            ), 
 	            React.createElement("div", {className: "half"}, 
 	              React.createElement("label", null, "Surname"), 
-	              React.createElement("input", {className: "surname", type: "text", placeholder: "Doe", ref: "surname", required: "true"})
+	              React.createElement("input", {name: "surname", className: "surname", type: "text", placeholder: "Doe", ref: "surname", required: "true"})
 	            )
 	          ), 
 	          React.createElement("li", {className: "row"}, 
@@ -12535,19 +12535,19 @@
 	            React.createElement("label", null, "Phone Nr."), 
 	            React.createElement("div", {className: "input-group"}, 
 	                React.createElement("span", {className: "icon input-icon phone-nr-icon"}), 
-	                React.createElement("input", {className: "form-control phone-nr", type: "tel", placeholder: "+421 949 987 654", ref: "phoneNr", required: "true"})
+	                React.createElement("input", {name: "phone-nr", className: "form-control phone-nr", type: "tel", placeholder: "+421 949 987 654", ref: "phoneNr", required: "true"})
 	            )
 	          ), 
 	          React.createElement("li", {className: "row"}, 
 	            React.createElement("label", null, "Email"), 
 	            React.createElement("div", {className: "input-group"}, 
 	                React.createElement("span", {className: "icon input-icon email-icon"}), 
-	                React.createElement("input", {className: "form-control email", type: "email", placeholder: "john.doe@mail.com", ref: "email", required: "true"})
+	                React.createElement("input", {name: "email", className: "form-control email", type: "email", placeholder: "john.doe@mail.com", ref: "email", required: "true"})
 	            )
 	          ), 
 	          React.createElement("li", {className: "row"}, 
 	            React.createElement("label", null, "Note ", React.createElement("span", {className: "note"}, "(*optional)")), 
-	            React.createElement("textarea", {className: "icon info-icon", placeholder: "Note", ref: "note"})
+	            React.createElement("textarea", {name: "note", className: "icon info-icon", placeholder: "Note", ref: "note"})
 	          )
 	        ), 
 	        React.createElement("ul", {className: "form submit"}, 

@@ -44,7 +44,7 @@ module.exports = React.createClass({
               <label>Tracking Nr.</label>
               <div className="input-group">
                 <span className="icon input-icon tracking-nr-icon"></span>
-                <input className="form-control tracking-nr" type="text" placeholder="PP445511" ref="trackingNr" autoFocus="true" required="true"/>
+                <input name="tracking-nr" className="form-control tracking-nr" type="text" placeholder="PP445511" ref="trackingNr" autoFocus="true" required="true"/>
               </div>
             </li>
           <li className="row row-name clearfix">
@@ -52,12 +52,12 @@ module.exports = React.createClass({
               <label>Name</label>
               <div className="input-group">
                 <span className="icon input-icon name-icon"></span>
-                <input className="form-control name" type="text" placeholder="John" ref="name" required="true"/>
+                <input name="name" className="form-control name" type="text" placeholder="John" ref="name" required="true"/>
               </div>
             </div>
             <div className="half">
               <label>Surname</label>
-              <input className="surname" type="text" placeholder="Doe" ref="surname" required="true"/>
+              <input name="surname" className="surname" type="text" placeholder="Doe" ref="surname" required="true"/>
             </div>
           </li>
           <li className="row">
@@ -71,19 +71,19 @@ module.exports = React.createClass({
             <label>Phone Nr.</label>
             <div className="input-group">
                 <span className="icon input-icon phone-nr-icon"></span>
-                <input className="form-control phone-nr" type="tel" placeholder="+421 949 987 654" ref="phoneNr" required="true"/>
+                <input name="phone-nr" className="form-control phone-nr" type="tel" placeholder="+421 949 987 654" ref="phoneNr" required="true"/>
             </div>
           </li>
           <li className="row">
             <label>Email</label>
             <div className="input-group">
                 <span className="icon input-icon email-icon"></span>
-                <input className="form-control email" type="email" placeholder="john.doe@mail.com" ref="email" required="true"/>
+                <input name="email" className="form-control email" type="email" placeholder="john.doe@mail.com" ref="email" required="true"/>
             </div>
           </li>
           <li className="row">
             <label>Note <span className="note">(*optional)</span></label>
-            <textarea className="icon info-icon" placeholder="Note" ref="note" />
+            <textarea name="note" className="icon info-icon" placeholder="Note" ref="note" />
           </li>
         </ul>
         <ul className="form submit">

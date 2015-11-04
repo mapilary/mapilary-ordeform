@@ -48,21 +48,21 @@ module.exports = React.createClass({
                     <label>Username</label>
                     <div className="input-group">
                         <span className="icon input-icon name-icon"></span>
-                        <input className="form-control username" type="text" placeholder="username" defaultValue={this.props.username} ref="username" autoFocus="true" required="true"/>
+                        <input name="username" className="form-control username" type="text" placeholder="username" defaultValue={this.props.username} ref="username" autoFocus="true" required="true"/>
                     </div>
                   </li>
                   <li className="row">
                     <label>Company</label>
                     <div className="input-group">
                         <span className="icon input-icon address-icon"></span>
-                        <input className="form-control company" type="text" placeholder="company" defaultValue={this.props.company} ref="company" required="false"/>
+                        <input name="company" className="form-control company" type="text" placeholder="company" defaultValue={this.props.company} ref="company" required="false"/>
                     </div>
                   </li>
                 <li className="row">
                   <label>Password</label>
                   <div className="input-group">
                     <span className="icon input-icon padlock-icon"></span>
-                    <input className="form-control password" type="password" placeholder="password" ref="password" required="true"/>
+                    <input name="password" className="form-control password" type="password" placeholder="password" ref="password" required="true"/>
                   </div>
                 </li>
               </ul>
