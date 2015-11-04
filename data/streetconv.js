@@ -4,7 +4,7 @@ var fs = require('fs');
 
 var ulice = [];
 
-lazy(fs.createReadStream('./data/streets.txt'))
+lazy(fs.createReadStream('./streets.txt'))
 .lines
 .map(function (line) {
 	var l = line.toString();

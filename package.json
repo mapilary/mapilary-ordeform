@@ -1,22 +1,33 @@
 {
   "name": "mapilary-orderform",
-  "version": "1.0.1",
-  "description": "simulation of last step of checkout process",
-  "main": "index.js",
-  "scripts": {
-    "test": "make test"
-  },
-  "author": "",
+  "version": "2.0.0",
+  "description": "",
+  "author": "Marian Hello",
   "license": "ISC",
+  "scripts": {
+    "start": "npm run serve | npm run dev",
+    "serve": "./node_modules/.bin/http-server -p 8080",
+    "dev": "webpack-dev-server --progress --colors --port 8090",
+    "build": "webpack && mkdir -p dist/vendor && cp node_modules/jquery/dist/jquery.min.js node_modules/react-dom/dist/react-dom.min.js node_modules/react/dist/react-with-addons.min.js dist/vendor/ && cp src/index.dist.html dist/index.html && cp -r src/css src/config.js dist/"
+  },
   "dependencies": {
-    "body-parser": "^1.12.3",
-    "connect": "^3.3.5",
-    "cors": "^2.6.0",
-    "mapilary-apiclient-nodejs": "git://github.com/mapilary/mapilary-apiclient-nodejs#api2.0"
+    "jquery": "^2.1.4",
+    "less": "^2.5.3",
+    "moment": "^2.10.6",
+    "react": "^0.14.2",
+    "react-dom": "^0.14.2",
+    "react-geosuggest": "^1.13.0",
+    "react-select": "^0.9.1"
   },
   "devDependencies": {
-    "chai": "^2.2.0",
-    "mocha": "^2.2.1",
-    "nedb": "^1.1.2"
+    "css-loader": "^0.21.0",
+    "file-loader": "^0.8.4",
+    "http-server": "^0.8.5",
+    "jsx-loader": "^0.13.2",
+    "less-loader": "^2.2.1",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.6",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.1"
   }
 }
