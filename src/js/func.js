@@ -52,7 +52,7 @@ function buildDispatchOrder (request) {
     };
 }
 
-function buildDelivery (request) {
+function buildDeliveryOrder (request) {
     var now = new Date();
     return {
         customTrackingNr: request.trackingNr,
@@ -98,14 +98,18 @@ function publishDispatch (request, options) {
 }
 
 function createDelivery (request, options) {
-    var delivery = buildDelivery(request);
+    var order = buildDeliveryOrder(request);
     return $.ajax(options.baseUrl + 'deliveries', {
-        data: JSON.stringify(delivery),
+        data: JSON.stringify(order),
         contentType: 'application/json',
         type: 'POST',
         headers: {
             'Authorization': 'Bearer ' + options.accessToken
         }
+    })
+    .done(function (delivery) {
+      delivery.pinCode = order.pinCode;
+      return delivery;
     });
 }
 

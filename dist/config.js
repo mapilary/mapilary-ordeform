@@ -16,6 +16,11 @@
         case 'test.mapilary.com':
           baseUrl = 'https://api.mapilary.com/test/';
           break;
+        case 'xpressgo.com':
+          baseUrl = 'https://api.xpressgo.com/v2/';
+          break;
+        default:
+          baseUrl = 'https://api.mapilary.com/test/';
     }
 
     ns.config = {

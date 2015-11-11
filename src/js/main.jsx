@@ -16,6 +16,7 @@ module.exports = React.createClass({
     if (mapilary.accessToken && moment().isBefore(moment.unix(mapilary.tokenExpire))) {
         page = 'form';
     }
+
     return {
         page: page
     };
@@ -41,8 +42,12 @@ module.exports = React.createClass({
         accessToken: mapilary.accessToken,
         baseUrl: options.baseUrl
     })
-    .done(function () {
-        that.setState({page: 'confirm'});
+    .done(function (delivery) {
+        that.setState({
+          page: 'confirm',
+          pinCode: delivery.pinCode,
+          trackingNr: delivery.trackingNr
+        });
     })
     .always(function () {
         that.refs.spinner.setState({ loading: false });
@@ -81,13 +86,14 @@ module.exports = React.createClass({
   },
   render: function() {
     var classes = ['orderform', this.state.page].join(' ');
+
     return (
       <div className={classes}>
         <LoginPage onLogin={this.handleLogin}/>
         <div className="pagewrap">
             <SettingsPage onSet={this.handleSettings} deadline={this.props.deadline} onlineSince={this.props.onlineSince} timeout={this.props.timeout} />
             <OrderPage baseUrl={this.state.baseUrl} onLogoutBtnClick={this.handleLogout} onOrderSubmit={this.handleOrderSubmit} />
-            <ConfirmationPage onBackBtnClick={this.showFormPage} />
+            <ConfirmationPage onBackBtnClick={this.showFormPage} trackingNr={this.state.trackingNr} pinCode={this.state.pinCode}/>
         </div>
         <Spinner ref="spinner"/>
       </div>
