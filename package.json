@@ -6,7 +6,7 @@
   "license": "ISC",
   "scripts": {
     "start": "npm run serve | npm run dev",
-    "serve": "./node_modules/.bin/http-server -p 9080",
+    "serve": "./node_modules/.bin/http-server -p 8080",
     "dev": "webpack-dev-server --progress --colors --port 8090",
     "build": "webpack && mkdir -p dist/vendor && cp node_modules/jquery/dist/jquery.min.js node_modules/react-dom/dist/react-dom.min.js node_modules/react/dist/react-with-addons.min.js dist/vendor/ && cp src/index.dist.html dist/index.html && cp -r src/css src/config.js dist/"
   },
