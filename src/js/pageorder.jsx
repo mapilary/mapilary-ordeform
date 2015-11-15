@@ -44,7 +44,7 @@ module.exports = React.createClass({
         return (
             <div className="page">
               <div className="headr">
-                <span className="btn btn-logout" onClick={this.props.onLogoutBtnClick}></span>
+                <span className="btn btn-settings" onClick={this.props.onSettingsBtnClick}></span>
                 <h2>Order delivery</h2>
                 <Notify ref="notify"/>
               </div>

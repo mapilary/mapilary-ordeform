@@ -24,12 +24,7 @@
     }
 
     ns.config = {
-        baseUrl: baseUrl,
-        shopName: 'pneuportal.sk',
-        shopAddress: 'Karpatské námestie 10, Bratislava'
+        baseUrl: baseUrl
     };
-
-    ns.accessToken = sessionStorage.getItem('form.accessToken');
-    ns.tokenExpire = sessionStorage.getItem('form.tokenExpire');
 
 })(window.mapilary = window.mapilary || {});

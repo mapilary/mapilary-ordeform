@@ -92,7 +92,7 @@
 
 
 	// module
-	exports.push([module.id, "/* common styles */\nbody {\n  font-size: 10px;\n  font-family: sans-serif;\n}\n/* this shoul be applied to * selector */\nul,\nform,\nlabel,\ninput,\ntextarea,\nselect,\n.half {\n  box-sizing: border-box;\n}\n/* helpers */\n.clearfix:after {\n  content: \" \";\n  display: block;\n  clear: both;\n}\n.no-select {\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.address-wrapper {\n  position: relative;\n}\n.random-address {\n  position: absolute;\n  top: 4em;\n  left: 36em;\n  display: block;\n  height: 1.8em;\n  width: 1.8em;\n  background: url(" + __webpack_require__(4) + ") no-repeat #fff;\n}\n.btn {\n  display: inline-block;\n  min-width: 15em;\n  height: auto;\n  padding: .8rem;\n  border: 0;\n  font-size: 3em;\n  font-weight: 700;\n  color: #fff;\n  background-color: #ef3e23;\n}\n.btn.btn-settings {\n  float: right;\n  width: 3.2em;\n  height: 3.2em;\n  min-width: 0;\n  padding: 0;\n  margin: 0;\n  background: url(" + __webpack_require__(5) + ") no-repeat;\n}\n.btn.btn-logout {\n  float: right;\n  width: 1.2em;\n  height: 3.2em;\n  min-width: 0;\n  padding: 0;\n  margin: 0;\n  background: url(" + __webpack_require__(6) + ") no-repeat;\n}\n.hidden {\n  display: none;\n}\n.required {\n  color: red;\n}\n.Select {\n  font-size: 1.5em;\n}\n.Select-menu-outer {\n  max-height: 14em;\n}\n.Select-menu {\n  max-height: 13.8em;\n}\n.notification {\n  height: 2em;\n  font-size: 2em;\n  color: #ef3e23;\n  text-align: center;\n}\n.orderform {\n  overflow: hidden;\n  position: relative;\n  height: 84em;\n  width: 60em;\n  margin: 5em auto 0;\n  border-radius: .5em;\n  background-color: #494545;\n}\n.orderform h2 {\n  margin-top: 0;\n  padding-bottom: 1em;\n  color: #fff;\n  font-size: 3em;\n  text-align: center;\n  border-bottom: 1px solid #cccccc;\n}\n.orderform h3 {\n  color: #fff;\n  font-size: 2em;\n}\n.orderform label {\n  color: #fff;\n}\n.orderform label,\n.orderform input {\n  font-family: sans-serif;\n}\n.orderform .headr {\n  padding: 4em 5em 0;\n}\n.orderform.confirm .pagewrap {\n  transform: translate3d(-120em, 0, 0);\n}\n.orderform.settings .pagewrap {\n  transform: translate3d(0, 0, 0);\n}\n.orderform.login .page-login {\n  transform: translate3d(0, 0, 0);\n}\n.orderform .pagewrap {\n  height: 100%;\n  width: 300%;\n  position: relative;\n  transition-duration: .25s;\n  transform: translate3d(-60em, 0, 0);\n  z-index: 1;\n}\n.orderform .page {\n  position: relative;\n  float: left;\n  height: 100%;\n  width: 60em;\n}\n.orderform .page .form-container {\n  padding: 0 2em;\n}\n.orderform .page .form-container ul.form.submit {\n  position: absolute;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  width: 100%;\n  padding: 0 2em;\n}\n.orderform .page .form-container ul.form.submit .row {\n  margin: 0 auto;\n  margin-bottom: 3em;\n  width: 75%;\n}\n.orderform .page-login {\n  position: absolute;\n  background-color: #494545;\n  height: 100%;\n  width: 100%;\n  border-radius: .5em;\n  transition-duration: .5s;\n  transform: translate3d(0, -84em, 0);\n  z-index: 2;\n}\n.orderform .page-login .form-container .submit {\n  margin-top: 10em;\n}\n.orderform .page-settings .form-container .voting {\n  float: right;\n}\n.orderform .page-settings .form-container .section-head {\n  float: left;\n}\n.orderform .page-confirmation {\n  text-align: center;\n}\n.orderform .page-confirmation .headr {\n  margin-top: 15em;\n}\n.orderform .page-confirmation h2 {\n  border: 0;\n}\nul.form {\n  width: 75%;\n  margin: 0 auto;\n  padding: 0;\n  list-style-type: none;\n  /* iconst for inputs, textareas, selects */\n  /* textaread override */\n  /* overriding styles in select.css */\n}\nul.form .row {\n  margin-bottom: 1.5em;\n}\nul.form .half {\n  width: 50%;\n  float: left;\n  padding-right: 2px;\n}\nul.form .half .input-icon {\n  padding-left: 4.2em;\n}\nul.form .half + .half {\n  padding-right: 0;\n  padding-left: 2px;\n}\nul.form label {\n  color: #fff;\n  font-size: 1.4em;\n  text-align: left;\n  display: block;\n  padding: 5px 0 5px;\n}\nul.form select,\nul.form input,\nul.form textarea {\n  margin-left: 0;\n  border: 0;\n  height: auto;\n  font-size: 1.5em;\n}\nul.form input {\n  width: 100%;\n  padding: .8rem;\n  border-radius: 3px;\n  outline: none;\n}\nul.form input:disabled {\n  color: #dddddd;\n  background: #dddddd;\n}\nul.form textarea {\n  width: 100%;\n  height: 8em;\n  padding: 1rem;\n  border: 0;\n  border-radius: 3px;\n}\nul.form textarea.icon {\n  padding-left: 4em;\n}\nul.form .input-group {\n  display: table;\n  position: relative;\n  width: 100%;\n  border-collapse: separate;\n}\nul.form .input-group .input-icon {\n  display: table-cell;\n  border-radius: 3px;\n  border-top-right-radius: 0;\n  border-bottom-right-radius: 0;\n}\nul.form .input-group .form-control {\n  display: table-cell;\n}\nul.form .input-group input {\n  border-top-left-radius: 0;\n  border-bottom-left-radius: 0;\n}\nul.form .icon {\n  background: url(" + __webpack_require__(7) + ") 0 0 no-repeat #fff;\n  padding-left: 2.4em;\n}\nul.form .name-icon {\n  background-position: -5px -2px;\n}\nul.form .address-icon {\n  background-position: -5px -65px;\n}\nul.form .info-icon {\n  background-position: -5px -143px;\n}\nul.form textarea.info-icon {\n  background: url(" + __webpack_require__(8) + ") -5px 0 no-repeat #fff;\n}\nul.form .shop-icon {\n  background-position: -5px -217px;\n}\nul.form .phone-nr-icon {\n  background-position: -5px -293px;\n}\nul.form .email-icon {\n  background-position: -5px -355px;\n}\nul.form .tracking-nr-icon {\n  background-position: -5px -411px;\n}\nul.form .padlock-icon {\n  background-position: -5px -462px;\n}\nul.form .note {\n  color: #eee;\n  font-size: .7em;\n}\nul.form + .note {\n  text-align: center;\n  display: block;\n}\nul.form.consignee,\nul.form.shop {\n  background-color: transparent;\n}\nul.form .Select-control,\nul.form .Select-placeholder {\n  padding: .8rem 5.2em .8rem 10px;\n}\nul.form .Select-placeholder {\n  padding: .8rem 5.2em .8rem 5.2em;\n  background: url(" + __webpack_require__(7) + ") -5px -217px no-repeat #fff;\n}\nul.form .Select-arrow {\n  top: 19px;\n}\nul.form .Select-clear {\n  top: 7px;\n}\nul.form .Select-input > input {\n  padding: 0;\n  font-size: 1em;\n}\nul.form .slideThree {\n  background: #fff;\n}\nul.form .slideThree:before {\n  color: #ef3e23;\n}\nul.form .slideThree:after {\n  color: #494545;\n}\nul.form .slideThree label {\n  background: -webkit-linear-gradient(top, #B0B0AD 0%, #94988E 40%, #666864 100%);\n  background: -moz-linear-gradient(top, #B0B0AD 0%, #94988E 40%, #666864 100%);\n  background: -o-linear-gradient(top, #B0B0AD 0%, #94988E 40%, #666864 100%);\n  background: -ms-linear-gradient(top, #B0B0AD 0%, #94988E 40%, #666864 100%);\n  background: linear-gradient(top, #B0B0AD 0%, #94988E 40%, #666864 100%);\n}\nul.form .slideThree input {\n  width: auto;\n}\nul.form .geosuggest__input {\n  background: url(" + __webpack_require__(7) + ") 0 0 no-repeat #fff;\n  padding-left: 2.4em;\n  background-position: -5px -65px;\n  padding-left: 3.8em;\n}\nul.form .btn {\n  font-size: 2em;\n  font-weight: 700;\n}\n.icon-credits {\n  text-align: center;\n}\n", ""]);
+	exports.push([module.id, "/* common styles */\nbody {\n  font-size: 10px;\n  font-family: sans-serif;\n}\n/* this shoul be applied to * selector */\nul,\nform,\nlabel,\ninput,\ntextarea,\nselect,\n.half {\n  box-sizing: border-box;\n}\n/* helpers */\n.clearfix:after {\n  content: \" \";\n  display: block;\n  clear: both;\n}\n.no-select {\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.address-wrapper {\n  position: relative;\n}\n.random-address {\n  position: absolute;\n  top: 4em;\n  left: 36em;\n  display: block;\n  height: 1.8em;\n  width: 1.8em;\n  background: url(" + __webpack_require__(4) + ") no-repeat #fff;\n}\n.btn {\n  display: inline-block;\n  min-width: 15em;\n  height: auto;\n  padding: .8rem;\n  border: 0;\n  font-size: 3em;\n  font-weight: 700;\n  color: #fff;\n  background-color: #ef3e23;\n}\n.btn.btn-settings {\n  float: right;\n  width: 3.2em;\n  height: 3.2em;\n  min-width: 0;\n  padding: 0;\n  margin: 0;\n  background: url(" + __webpack_require__(5) + ") no-repeat;\n}\n.btn.btn-logout {\n  float: right;\n  width: 1.2em;\n  height: 3.2em;\n  min-width: 0;\n  padding: 0;\n  margin: 0;\n  background: url(" + __webpack_require__(6) + ") no-repeat;\n}\n.hidden {\n  display: none;\n}\n.required {\n  color: red;\n}\n.Select {\n  font-size: 1.5em;\n}\n.Select-menu-outer {\n  max-height: 14em;\n}\n.Select-menu {\n  max-height: 13.8em;\n}\n.notification {\n  height: 2em;\n  font-size: 2em;\n  color: #ef3e23;\n  text-align: center;\n}\n.orderform {\n  overflow: hidden;\n  position: relative;\n  height: 84em;\n  width: 60em;\n  margin: 5em auto 0;\n  border-radius: .5em;\n  background-color: #494545;\n}\n.orderform h2 {\n  margin-top: 0;\n  padding-bottom: 1em;\n  color: #fff;\n  font-size: 3em;\n  text-align: center;\n  border-bottom: 1px solid #cccccc;\n}\n.orderform h3 {\n  color: #fff;\n  font-size: 2em;\n}\n.orderform label {\n  color: #fff;\n}\n.orderform label,\n.orderform input {\n  font-family: sans-serif;\n}\n.orderform .headr {\n  padding: 4em 5em 0;\n}\n.orderform.confirm .pagewrap {\n  transform: translate3d(-120em, 0, 0);\n}\n.orderform.settings .pagewrap {\n  transform: translate3d(0, 0, 0);\n}\n.orderform.login .page-login {\n  transform: translate3d(0, 0, 0);\n}\n.orderform .pagewrap {\n  height: 100%;\n  width: 300%;\n  position: relative;\n  transition-duration: .25s;\n  transform: translate3d(-60em, 0, 0);\n  z-index: 1;\n}\n.orderform .page {\n  position: relative;\n  float: left;\n  height: 100%;\n  width: 60em;\n}\n.orderform .page .form-container {\n  padding: 0 2em;\n}\n.orderform .page .form-container ul.form.submit {\n  position: absolute;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  width: 100%;\n  padding: 0 2em;\n}\n.orderform .page .form-container ul.form.submit .row {\n  margin: 0 auto;\n  margin-bottom: 3em;\n  width: 75%;\n}\n.orderform .page-login {\n  position: absolute;\n  background-color: #494545;\n  height: 100%;\n  width: 100%;\n  border-radius: .5em;\n  transition-duration: .5s;\n  transform: translate3d(0, -84em, 0);\n  z-index: 2;\n}\n.orderform .page-login .form-container .submit {\n  margin-top: 10em;\n}\n.orderform .page-settings .form-container .voting {\n  float: right;\n}\n.orderform .page-settings .form-container .section-head {\n  float: left;\n}\nul.form {\n  width: 75%;\n  margin: 0 auto;\n  padding: 0;\n  list-style-type: none;\n  /* iconst for inputs, textareas, selects */\n  /* textaread override */\n  /* overriding styles in select.css */\n}\nul.form .row {\n  margin-bottom: 1.5em;\n}\nul.form .row-logout {\n  margin-top: 5em;\n}\nul.form .half {\n  width: 50%;\n  float: left;\n  padding-right: 2px;\n}\nul.form .half .input-icon {\n  padding-left: 4.2em;\n}\nul.form .half + .half {\n  padding-right: 0;\n  padding-left: 2px;\n}\nul.form label {\n  color: #fff;\n  font-size: 1.4em;\n  text-align: left;\n  display: block;\n  padding: 5px 0 5px;\n}\nul.form select,\nul.form input,\nul.form textarea {\n  margin-left: 0;\n  border: 0;\n  height: auto;\n  font-size: 1.5em;\n}\nul.form input {\n  width: 100%;\n  padding: .8rem;\n  border-radius: 3px;\n  outline: none;\n}\nul.form input:disabled {\n  color: #dddddd;\n  background: #dddddd;\n}\nul.form textarea {\n  width: 100%;\n  height: 8em;\n  padding: 1rem;\n  border: 0;\n  border-radius: 3px;\n}\nul.form textarea.icon {\n  padding-left: 4em;\n}\nul.form .input-group {\n  display: table;\n  position: relative;\n  width: 100%;\n  border-collapse: separate;\n}\nul.form .input-group .input-icon {\n  display: table-cell;\n  border-radius: 3px;\n  border-top-right-radius: 0;\n  border-bottom-right-radius: 0;\n}\nul.form .input-group .form-control {\n  display: table-cell;\n}\nul.form .input-group input {\n  border-top-left-radius: 0;\n  border-bottom-left-radius: 0;\n}\nul.form .icon {\n  background: url(" + __webpack_require__(7) + ") 0 0 no-repeat #fff;\n  padding-left: 2.4em;\n}\nul.form .name-icon {\n  background-position: -5px -2px;\n}\nul.form .address-icon {\n  background-position: -5px -65px;\n}\nul.form .info-icon {\n  background-position: -5px -143px;\n}\nul.form textarea.info-icon {\n  background: url(" + __webpack_require__(8) + ") -5px 0 no-repeat #fff;\n}\nul.form .shop-icon {\n  background-position: -5px -217px;\n}\nul.form .phone-nr-icon {\n  background-position: -5px -293px;\n}\nul.form .email-icon {\n  background-position: -5px -355px;\n}\nul.form .tracking-nr-icon {\n  background-position: -5px -411px;\n}\nul.form .padlock-icon {\n  background-position: -5px -462px;\n}\nul.form .note {\n  color: #eee;\n  font-size: .7em;\n}\nul.form + .note {\n  text-align: center;\n  display: block;\n}\nul.form.consignee,\nul.form.shop {\n  background-color: transparent;\n}\nul.form .Select-control,\nul.form .Select-placeholder {\n  padding: .8rem 5.2em .8rem 10px;\n}\nul.form .Select-placeholder {\n  padding: .8rem 5.2em .8rem 5.2em;\n  background: url(" + __webpack_require__(7) + ") -5px -217px no-repeat #fff;\n}\nul.form .Select-arrow {\n  top: 19px;\n}\nul.form .Select-clear {\n  top: 7px;\n}\nul.form .Select-input > input {\n  padding: 0;\n  font-size: 1em;\n}\nul.form .slideThree {\n  background: #fff;\n}\nul.form .slideThree:before {\n  color: #ef3e23;\n}\nul.form .slideThree:after {\n  color: #494545;\n}\nul.form .slideThree label {\n  background: -webkit-linear-gradient(top, #B0B0AD 0%, #94988E 40%, #666864 100%);\n  background: -moz-linear-gradient(top, #B0B0AD 0%, #94988E 40%, #666864 100%);\n  background: -o-linear-gradient(top, #B0B0AD 0%, #94988E 40%, #666864 100%);\n  background: -ms-linear-gradient(top, #B0B0AD 0%, #94988E 40%, #666864 100%);\n  background: linear-gradient(top, #B0B0AD 0%, #94988E 40%, #666864 100%);\n}\nul.form .slideThree input {\n  width: auto;\n}\nul.form .geosuggest__input {\n  background: url(" + __webpack_require__(7) + ") 0 0 no-repeat #fff;\n  padding-left: 2.4em;\n  background-position: -5px -65px;\n  padding-left: 3.8em;\n}\nul.form .btn {\n  font-size: 2em;\n  font-weight: 700;\n}\n.icon-credits {\n  text-align: center;\n}\n.tracking-info {\n  width: 75%;\n  margin: 3em auto;\n  font-size: 2em;\n  color: #fff;\n  text-align: left;\n}\n.tracking-info .success {\n  text-align: center;\n}\n.tracking-info .trackingNr,\n.tracking-info .pinCode {\n  color: #ef3e23;\n}\n.tracking-info .tracking-data {\n  margin: 1em 0;\n  padding: 0;\n  line-height: 1.5em;\n  list-style-type: none;\n  text-align: left;\n}\n", ""]);
 
 	// exports
 
@@ -455,71 +455,85 @@
 	    mapilaryFnc      = __webpack_require__(102),
 	    LoginPage        = __webpack_require__(104),
 	    SettingsPage     = __webpack_require__(106),
-	    OrderPage        = __webpack_require__(107),
+	    OrderPage        = __webpack_require__(109),
 	    ConfirmationPage = __webpack_require__(111);
 
 	module.exports = React.createClass({displayName: "module.exports",
 	  getInitialState: function() {
-	    var page = 'login';
-	    console.log(mapilary.accessToken, mapilary.tokenExpire)
-	    if (mapilary.accessToken && moment().isBefore(moment.unix(mapilary.tokenExpire))) {
+	    var page = 'login',
+	        stockAddress = localStorage.getItem('form.stockAddress'),
+	        accessToken  = sessionStorage.getItem('form.accessToken'),
+	        tokenExpire  = sessionStorage.getItem('form.tokenExpire');
+
+	    if (accessToken && moment().isBefore(moment.unix(tokenExpire))) {
 	        page = 'form';
+	    } else {
+	        accessToken = null;
+	        tokenExpire = null;
 	    }
+
 	    return {
-	        page: page
+	        page: page,
+	        accessToken: accessToken,
+	        stockAddress: stockAddress || ''
 	    };
 	  },
 	  getNewTimeout: function (now) {
 	      return moment(now || new Date()).add(10, 'm').toDate();
 	  },
-	  getDefaultProps: function () {
-	      var now = moment();
-	      return {
-	          deadline: moment(now).add(1, 'h').toDate(),
-	          voting: false,
-	          onlineSince: new Date(),
-	          timeout: 10
-	      };
-	  },
 	  handleOrderSubmit: function(order, options) {
 	    var that = this;
 	    this.refs.spinner.setState({ loading: true });
-	    order.deadline = this.props.deadline;
+	    order.stockAddress = this.state.stockAddress;
 
 	    return mapilaryFnc.createDelivery(order, {
-	        accessToken: mapilary.accessToken,
+	        accessToken: this.state.accessToken,
 	        baseUrl: options.baseUrl
 	    })
-	    .done(function () {
-	        that.setState({page: 'confirm'});
+	    .done(function (delivery) {
+	        that.setState({
+	          page: 'confirm',
+	          pinCode: delivery.pinCode,
+	          trackingNr: delivery.trackingNr
+	        });
 	    })
 	    .always(function () {
 	        that.refs.spinner.setState({ loading: false });
 	    });
 	  },
 	  handleSettings: function (props) {
-	    this.setProps(props);
+	    Object.keys(props).forEach(function (name) {
+	      localStorage.setItem('form.' + name, props[name]);
+	    });
+	    this.setState(props);
 	    this.showFormPage();
 	  },
 	  handleLogout: function () {
-	    mapilary.tokenExpire = null;
-	    mapilary.accessToken = null;
 	    sessionStorage.removeItem('form.accessToken');
 	    sessionStorage.removeItem('form.tokenExpire');
+	    this.setState({ accessToken: null });
 	    this.showLoginPage();
 	  },
 	  handleLogin: function (auth) {
-	    mapilary.tokenExpire = auth.tokenExpire;
-	    mapilary.accessToken = auth.accessToken;
+	    var page = 'form';
+
 	    sessionStorage.setItem('form.accessToken', auth.accessToken);
 	    sessionStorage.setItem('form.tokenExpire', auth.tokenExpire.unix());
 
-	    this.setState({page: 'form'});
+	    if (!this.state.stockAddress) {
+	      page = 'settings';
+	    }
+
+	    this.setState({
+	      page: page,
+	      accessToken: auth.accessToken
+	    });
 	  },
 	  showLoginPage: function () {
 	    this.setState({page: 'login'});
 	  },
 	  showSettingsPage: function () {
+	    console.log('[DEBUG]: show settings page');
 	    this.setState({page: 'settings'});
 	  },
 	  showFormPage: function() {
@@ -530,13 +544,14 @@
 	  },
 	  render: function() {
 	    var classes = ['orderform', this.state.page].join(' ');
+
 	    return (
 	      React.createElement("div", {className: classes}, 
 	        React.createElement(LoginPage, {onLogin: this.handleLogin}), 
 	        React.createElement("div", {className: "pagewrap"}, 
-	            React.createElement(SettingsPage, {onSet: this.handleSettings, deadline: this.props.deadline, onlineSince: this.props.onlineSince, timeout: this.props.timeout}), 
-	            React.createElement(OrderPage, {baseUrl: this.state.baseUrl, onLogoutBtnClick: this.handleLogout, onOrderSubmit: this.handleOrderSubmit}), 
-	            React.createElement(ConfirmationPage, {onBackBtnClick: this.showFormPage})
+	            React.createElement(SettingsPage, {stockAddress: this.state.stockAddress, onSet: this.handleSettings, onLogout: this.handleLogout, deadline: this.props.deadline, onlineSince: this.props.onlineSince, timeout: this.props.timeout}), 
+	            React.createElement(OrderPage, {baseUrl: this.state.baseUrl, onSettingsBtnClick: this.showSettingsPage, onOrderSubmit: this.handleOrderSubmit}), 
+	            React.createElement(ConfirmationPage, {onBackBtnClick: this.showFormPage, trackingNr: this.state.trackingNr, pinCode: this.state.pinCode})
 	        ), 
 	        React.createElement(Spinner, {ref: "spinner"})
 	      )
@@ -12092,7 +12107,7 @@
 	    };
 	}
 
-	function buildDelivery (request) {
+	function buildDeliveryOrder (request) {
 	    var now = new Date();
 	    return {
 	        customTrackingNr: request.trackingNr,
@@ -12101,8 +12116,9 @@
 	        note: request.note,
 	        state: 'UNSPECIFIED_TIME_WINDOWS',
 	        pinCode: getRandomInt(1000, 9999),
-	        deliveryAddress: {
-	            text: request.shopAddress
+	        stockAddress: request.stockAddress,
+	        preliminaryAddress: {
+	          text: request.consigneeAddress
 	        }
 	    };
 	}
@@ -12138,14 +12154,18 @@
 	}
 
 	function createDelivery (request, options) {
-	    var delivery = buildDelivery(request);
-	    return $.ajax(options.baseUrl + 'deliveries', {
-	        data: JSON.stringify(delivery),
+	    var order = buildDeliveryOrder(request);
+	    return $.ajax(options.baseUrl + 'deliveries/new', {
+	        data: JSON.stringify(order),
 	        contentType: 'application/json',
 	        type: 'POST',
 	        headers: {
 	            'Authorization': 'Bearer ' + options.accessToken
 	        }
+	    })
+	    .done(function (delivery) {
+	      delivery.pinCode = order.pinCode;
+	      return delivery;
 	    });
 	}
 
@@ -12309,11 +12329,12 @@
 
 	/** @jsx React.DOM */'use strict';
 
-	var React  = __webpack_require__(12),
-	    ReactDOM = __webpack_require__(10),
-	    $      = __webpack_require__(103),
-	    moment = __webpack_require__(13),
-	    Notify = __webpack_require__(105);
+	var React      = __webpack_require__(12),
+	    ReactDOM   = __webpack_require__(10),
+	    Geosuggest = __webpack_require__(107),
+	    $          = __webpack_require__(103),
+	    moment     = __webpack_require__(13),
+	    Notify     = __webpack_require__(105);
 
 	module.exports = React.createClass({displayName: "module.exports",
 	    onError: function (err) {
@@ -12321,36 +12342,21 @@
 	    },
 	    handleSubmit: function (e) {
 	        e.preventDefault();
-	        var deadline = moment(ReactDOM.findDOMNode(this.refs.deadline).value, 'YYYY-MM-DDTHH:mm:ss'),
-	            voting =  ReactDOM.findDOMNode(this.refs.voting).checked,
-	            timeout = ReactDOM.findDOMNode(this.refs.timeout).value,
-	            onlineSince = moment(ReactDOM.findDOMNode(this.refs.onlineSince).value, 'YYYY-MM-DDTHH:mm:ss');
-
-	        if (!deadline.isValid()) {
-	            this.onError(new Error('Deadline is not valid'));
-	            return;
+	        var stockAddress = this.refs.stockAddress.state.userInput;
+	        if (!stockAddress) {
+	          this.refs.notify.setState({message: 'Stock address cannot be blank'});
+	          return;
 	        }
-
-	        if (voting && !onlineSince.isValid()) {
-	            this.onError(new Error('Online since is not valid'));
-	            return;
-	        }
-
+	        this.refs.notify.setState({message: ''});
 	        this.props.onSet({
-	            voting: voting,
-	            onlineSince: onlineSince.toDate(),
-	            deadline: deadline.toDate(),
-	            timeout: timeout
+	            stockAddress: stockAddress
 	        });
 	    },
-	    toggleVoting: function () {
-	        if (!this.isVotingEnabled) {
-	            $('.voting-group input').removeAttr('disabled');
-	            this.isVotingEnabled = true;
-	        } else {
-	            $('.voting-group input').attr('disabled', 'disabled');
-	            this.isVotingEnabled = false;
-	        }
+	    componentDidMount: function () {
+	      var stockAddress = this.props.stockAddress;
+	      if (!stockAddress) {
+	        this.refs.notify.setState({message: 'Please specify address of your stock (warehouse)'});
+	      }
 	    },
 	    render: function () {
 	        return (
@@ -12362,34 +12368,19 @@
 	              React.createElement("form", {className: "form-container", onSubmit: this.handleSubmit}, 
 	                  React.createElement("ul", {className: "form"}, 
 	                    React.createElement("li", {className: "row"}, 
-	                        React.createElement("label", null, "Deadline"), 
-	                        React.createElement("input", {className: "deadline", step: "1", type: "datetime-local", defaultValue: moment(this.props.deadline).format('YYYY-MM-DDTHH:mm:ss'), ref: "deadline"})
-	                    ), 
-	                    React.createElement("li", {className: "row clearfix"}, 
-	                        React.createElement("div", {className: "voting no-select"}, 
-	                            React.createElement("div", {className: "slideThree"}, 
-	                                React.createElement("input", {type: "checkbox", defaultValue: "None", onChange: this.toggleVoting, id: "voting", ref: "voting"}), 
-	                                React.createElement("label", {htmlFor: "voting"})
-	                            )
-	                        ), 
-	                        React.createElement("h3", {className: "section-head"}, "Voting")
-	                    ), 
-	                    React.createElement("li", {className: "voting-group"}, 
-	                        React.createElement("div", {className: "row"}, 
-	                            React.createElement("label", null, "Online since"), 
-	                            React.createElement("input", {type: "datetime-local", step: "1", defaultValue: moment(this.props.onlineSince).format('YYYY-MM-DDTHH:mm:ss'), ref: "onlineSince", disabled: true})
-	                        ), 
-	                        React.createElement("div", {className: "row"}, 
-	                            React.createElement("label", null, "Timeout ", React.createElement("span", {className: "note"}, "(minutes)")), 
-	                            React.createElement("input", {type: "number", min: "1", max: "60", step: "1", defaultValue: this.props.timeout, ref: "timeout", disabled: true})
-	                        )
+	                    React.createElement("label", null, "Stock address"), 
+	                          React.createElement(Geosuggest, {
+	                              ref: "stockAddress", 
+	                              initialValue: this.props.stockAddress, 
+	                              placeholder: "Dunajská 4, Bratislava"}
+	                          )
 	                    )
-	                    ), 
-	                    React.createElement("ul", {className: "form submit"}, 
-	                        React.createElement("li", {className: "row"}, 
-	                          React.createElement("input", {className: "btn btn-order", type: "submit", value: "Save"})
-	                        )
-	                    )
+	                  ), 
+	                  React.createElement("ul", {className: "form submit"}, 
+	                      React.createElement("li", {className: "row"}, 
+	                        React.createElement("input", {className: "btn btn-order", type: "submit", value: "Save"})
+	                      )
+	                  )
 	              )
 	            )
 	        );
@@ -12399,170 +12390,6 @@
 
 /***/ },
 /* 107 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/** @jsx React.DOM */'use strict';
-
-	var React  = __webpack_require__(12),
-	    Notify = __webpack_require__(105),
-	    Form   = __webpack_require__(108);
-
-	module.exports = React.createClass({displayName: "module.exports",
-	    getInitialState: function() {
-	      return {
-	          baseUrl: window.mapilary.config.baseUrl
-	      };
-	    },
-
-	    componentDidMount: function() {
-	      if (!this.state.baseUrl) {
-	          this.onError(new Error('Unsupported domain: ' + window.location.hostname));
-	      }
-	    },
-	    onOrderSubmit: function (order) {
-	        var that = this;
-	        this.props.onOrderSubmit(order, { baseUrl: this.state.baseUrl })
-	        .done(function (resp) {
-	              that.clearError()
-	              that.refs.orderForm.reset();
-	        })
-	        .fail(function (jqXHR, status, err) {
-	             var failMsg = err.toString();
-	             if (jqXHR.status === 0) {
-	                 failMsg = 'No response from server';
-	             }
-	             if (jqXHR.responseJSON) {
-	                 failMsg = jqXHR.responseJSON.message || err.toString();
-	             }
-	              that.onError(new Error('Order failed: ' + failMsg));
-	        });
-	    },
-	    clearError: function () {
-	        this.refs.notify.setState({message: ''});
-	    },
-	    onError: function (err) {
-	        this.refs.notify.setState({message: err.message});
-	    },
-	    render: function () {
-	        return (
-	            React.createElement("div", {className: "page"}, 
-	              React.createElement("div", {className: "headr"}, 
-	                React.createElement("span", {className: "btn btn-logout", onClick: this.props.onLogoutBtnClick}), 
-	                React.createElement("h2", null, "Order delivery"), 
-	                React.createElement(Notify, {ref: "notify"})
-	              ), 
-	              React.createElement(Form, {address: this.props.address, shops: this.props.shops, onError: this.onError, onOrderSubmit: this.onOrderSubmit, ref: "orderForm"})
-	            )
-	        );
-	    }
-	});
-
-
-/***/ },
-/* 108 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/** @jsx React.DOM */'use strict';
-
-	var React      = __webpack_require__(12),
-	    ReactDOM   = __webpack_require__(10),
-	    Geosuggest = __webpack_require__(109);
-
-	module.exports = React.createClass({displayName: "module.exports",
-	  handleSubmit: function(e) {
-	    e.preventDefault();
-	    var trackingNr = ReactDOM.findDOMNode(this.refs.trackingNr),
-	        name       = ReactDOM.findDOMNode(this.refs.name),
-	        surname    = ReactDOM.findDOMNode(this.refs.surname),
-	        address    = this.refs.address,
-	        phoneNr    = ReactDOM.findDOMNode(this.refs.phoneNr),
-	        email      = ReactDOM.findDOMNode(this.refs.email),
-	        note       = ReactDOM.findDOMNode(this.refs.note);
-
-	    if (address.state.userInput.length === 0) {
-	        this.props.onError(new Error('Please enter valid address'));
-	        return;
-	    }
-
-	    this.props.onOrderSubmit({
-	      trackingNr: trackingNr.value.trim(),
-	      name: name.value.trim(),
-	      surname: surname.value.trim(),
-	      shopName: window.mapilary.config.shopName,
-	      shopAddress: window.mapilary.config.shopAddress,
-	      consigneeAddress: address.state.userInput,
-	      consigneePhoneNr: phoneNr.value.trim(),
-	      consigneeEmail: email.value.trim(),
-	      note: note.value.trim()
-	    });
-	  },
-	  reset: function () {
-	    this.refs.form.reset();
-	    this.refs.address.setInputValue('');
-	  },
-	  render: function() {
-	    return (
-	      React.createElement("form", {className: "form-container", onSubmit: this.handleSubmit, ref: "form"}, 
-	        React.createElement("ul", {className: "form"}, 
-	            React.createElement("li", {className: "row"}, 
-	              React.createElement("label", null, "Tracking Nr."), 
-	              React.createElement("div", {className: "input-group"}, 
-	                React.createElement("span", {className: "icon input-icon tracking-nr-icon"}), 
-	                React.createElement("input", {name: "tracking-nr", className: "form-control tracking-nr", type: "text", placeholder: "PP445511", ref: "trackingNr", autoFocus: "true", required: "true"})
-	              )
-	            ), 
-	          React.createElement("li", {className: "row row-name clearfix"}, 
-	            React.createElement("div", {className: "half"}, 
-	              React.createElement("label", null, "Name"), 
-	              React.createElement("div", {className: "input-group"}, 
-	                React.createElement("span", {className: "icon input-icon name-icon"}), 
-	                React.createElement("input", {name: "name", className: "form-control name", type: "text", placeholder: "John", ref: "name", required: "true"})
-	              )
-	            ), 
-	            React.createElement("div", {className: "half"}, 
-	              React.createElement("label", null, "Surname"), 
-	              React.createElement("input", {name: "surname", className: "surname", type: "text", placeholder: "Doe", ref: "surname", required: "true"})
-	            )
-	          ), 
-	          React.createElement("li", {className: "row"}, 
-	          React.createElement("label", null, "Address"), 
-	                React.createElement(Geosuggest, {
-	                    ref: "address", 
-	                    placeholder: "Dunajská 4, Bratislava"}
-	                )
-	          ), 
-	          React.createElement("li", {className: "row"}, 
-	            React.createElement("label", null, "Phone Nr."), 
-	            React.createElement("div", {className: "input-group"}, 
-	                React.createElement("span", {className: "icon input-icon phone-nr-icon"}), 
-	                React.createElement("input", {name: "phone-nr", className: "form-control phone-nr", type: "tel", placeholder: "+421 949 987 654", ref: "phoneNr", required: "true"})
-	            )
-	          ), 
-	          React.createElement("li", {className: "row"}, 
-	            React.createElement("label", null, "Email"), 
-	            React.createElement("div", {className: "input-group"}, 
-	                React.createElement("span", {className: "icon input-icon email-icon"}), 
-	                React.createElement("input", {name: "email", className: "form-control email", type: "email", placeholder: "john.doe@mail.com", ref: "email", required: "true"})
-	            )
-	          ), 
-	          React.createElement("li", {className: "row"}, 
-	            React.createElement("label", null, "Note ", React.createElement("span", {className: "note"}, "(*optional)")), 
-	            React.createElement("textarea", {name: "note", className: "icon info-icon", placeholder: "Note", ref: "note"})
-	          )
-	        ), 
-	        React.createElement("ul", {className: "form submit"}, 
-	            React.createElement("li", {className: "row"}, 
-	              React.createElement("input", {className: "btn btn-order", type: "submit", value: "Order now"})
-	            )
-	        )
-	      )
-	    );
-	  }
-	});
-
-
-/***/ },
-/* 109 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* global google */
@@ -12575,7 +12402,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _GeosuggestItem = __webpack_require__(110);
+	var _GeosuggestItem = __webpack_require__(108);
 
 	var _GeosuggestItem2 = _interopRequireDefault(_GeosuggestItem);
 
@@ -12978,7 +12805,7 @@
 	module.exports = Geosuggest;
 
 /***/ },
-/* 110 */
+/* 108 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -13048,6 +12875,170 @@
 	module.exports = GeosuggestItem;
 
 /***/ },
+/* 109 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/** @jsx React.DOM */'use strict';
+
+	var React  = __webpack_require__(12),
+	    Notify = __webpack_require__(105),
+	    Form   = __webpack_require__(110);
+
+	module.exports = React.createClass({displayName: "module.exports",
+	    getInitialState: function() {
+	      return {
+	          baseUrl: window.mapilary.config.baseUrl
+	      };
+	    },
+
+	    componentDidMount: function() {
+	      if (!this.state.baseUrl) {
+	          this.onError(new Error('Unsupported domain: ' + window.location.hostname));
+	      }
+	    },
+	    onOrderSubmit: function (order) {
+	        var that = this;
+	        this.props.onOrderSubmit(order, { baseUrl: this.state.baseUrl })
+	        .done(function (resp) {
+	              that.clearError()
+	              that.refs.orderForm.reset();
+	        })
+	        .fail(function (jqXHR, status, err) {
+	             var failMsg = err.toString();
+	             if (jqXHR.status === 0) {
+	                 failMsg = 'No response from server';
+	             }
+	             if (jqXHR.responseJSON) {
+	                 failMsg = jqXHR.responseJSON.message || err.toString();
+	             }
+	              that.onError(new Error('Order failed: ' + failMsg));
+	        });
+	    },
+	    clearError: function () {
+	        this.refs.notify.setState({message: ''});
+	    },
+	    onError: function (err) {
+	        this.refs.notify.setState({message: err.message});
+	    },
+	    render: function () {
+	        return (
+	            React.createElement("div", {className: "page"}, 
+	              React.createElement("div", {className: "headr"}, 
+	                React.createElement("span", {className: "btn btn-settings", onClick: this.props.onSettingsBtnClick}), 
+	                React.createElement("h2", null, "Order delivery"), 
+	                React.createElement(Notify, {ref: "notify"})
+	              ), 
+	              React.createElement(Form, {address: this.props.address, shops: this.props.shops, onError: this.onError, onOrderSubmit: this.onOrderSubmit, ref: "orderForm"})
+	            )
+	        );
+	    }
+	});
+
+
+/***/ },
+/* 110 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/** @jsx React.DOM */'use strict';
+
+	var React      = __webpack_require__(12),
+	    ReactDOM   = __webpack_require__(10),
+	    Geosuggest = __webpack_require__(107);
+
+	module.exports = React.createClass({displayName: "module.exports",
+	  handleSubmit: function(e) {
+	    e.preventDefault();
+	    var trackingNr = ReactDOM.findDOMNode(this.refs.trackingNr),
+	        name       = ReactDOM.findDOMNode(this.refs.name),
+	        surname    = ReactDOM.findDOMNode(this.refs.surname),
+	        address    = this.refs.address,
+	        phoneNr    = ReactDOM.findDOMNode(this.refs.phoneNr),
+	        email      = ReactDOM.findDOMNode(this.refs.email),
+	        note       = ReactDOM.findDOMNode(this.refs.note);
+
+	    if (address.state.userInput.length === 0) {
+	        //this.props.onError(new Error('Please enter valid address'));
+	        //return;
+	    }
+
+	    this.props.onOrderSubmit({
+	      trackingNr: trackingNr.value.trim(),
+	      name: name.value.trim(),
+	      surname: surname.value.trim(),
+	      shopName: window.mapilary.config.shopName,
+	      stockAddress: window.mapilary.config.stockAddress,
+	      consigneeAddress: address.state.userInput,
+	      consigneePhoneNr: phoneNr.value.trim(),
+	      consigneeEmail: email.value.trim(),
+	      note: note.value.trim()
+	    });
+	  },
+	  reset: function () {
+	    this.refs.form.reset();
+	    this.refs.address.setInputValue('');
+	  },
+	  render: function() {
+	    return (
+	      React.createElement("form", {className: "form-container", onSubmit: this.handleSubmit, ref: "form"}, 
+	        React.createElement("ul", {className: "form"}, 
+	            React.createElement("li", {className: "row"}, 
+	              React.createElement("label", null, "Tracking Nr."), 
+	              React.createElement("div", {className: "input-group"}, 
+	                React.createElement("span", {className: "icon input-icon tracking-nr-icon"}), 
+	                React.createElement("input", {name: "tracking-nr", className: "form-control tracking-nr", type: "text", placeholder: "PP445511", ref: "trackingNr", autoFocus: "true", required: "true"})
+	              )
+	            ), 
+	          React.createElement("li", {className: "row row-name clearfix"}, 
+	            React.createElement("div", {className: "half"}, 
+	              React.createElement("label", null, "Name"), 
+	              React.createElement("div", {className: "input-group"}, 
+	                React.createElement("span", {className: "icon input-icon name-icon"}), 
+	                React.createElement("input", {name: "name", className: "form-control name", type: "text", placeholder: "John", ref: "name", required: "true"})
+	              )
+	            ), 
+	            React.createElement("div", {className: "half"}, 
+	              React.createElement("label", null, "Surname"), 
+	              React.createElement("input", {name: "surname", className: "surname", type: "text", placeholder: "Doe", ref: "surname", required: "true"})
+	            )
+	          ), 
+	          React.createElement("li", {className: "row"}, 
+	          React.createElement("label", null, "Address"), 
+	                React.createElement(Geosuggest, {
+	                    ref: "address", 
+	                    placeholder: "Dunajská 4, Bratislava"}
+	                )
+	          ), 
+	          React.createElement("li", {className: "row"}, 
+	            React.createElement("label", null, "Phone Nr."), 
+	            React.createElement("div", {className: "input-group"}, 
+	                React.createElement("span", {className: "icon input-icon phone-nr-icon"}), 
+	                React.createElement("input", {name: "phone-nr", className: "form-control phone-nr", type: "tel", placeholder: "+421 949 987 654", ref: "phoneNr", required: "true"})
+	            )
+	          ), 
+	          React.createElement("li", {className: "row"}, 
+	            React.createElement("label", null, "Email"), 
+	            React.createElement("div", {className: "input-group"}, 
+	                React.createElement("span", {className: "icon input-icon email-icon"}), 
+	                React.createElement("input", {name: "email", className: "form-control email", type: "email", placeholder: "john.doe@mail.com", ref: "email"})
+	            )
+	          ), 
+	          React.createElement("li", {className: "row"}, 
+	            React.createElement("label", null, "Note ", React.createElement("span", {className: "note"}, "(*optional)")), 
+	            React.createElement("textarea", {name: "note", className: "icon info-icon", placeholder: "Note", ref: "note"})
+	          )
+	        ), 
+	        React.createElement("ul", {className: "form submit"}, 
+	            React.createElement("li", {className: "row"}, 
+	              React.createElement("input", {className: "btn btn-order", type: "submit", value: "Order now"})
+	            )
+	        )
+	      )
+	    );
+	  }
+	});
+
+
+/***/ },
 /* 111 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -13060,13 +13051,20 @@
 	        return (
 	            React.createElement("div", {className: "page page-confirmation"}, 
 	                React.createElement("div", {className: "headr"}, 
-	                  React.createElement("h2", null, "Thank you!")
+	                  React.createElement("h2", null, "Order sent")
 	                ), 
-	                  React.createElement("ul", {className: "form submit"}, 
-	                    React.createElement("li", {className: "row"}, 
-	                        React.createElement("input", {className: "btn btn-back", onClick: this.props.onBackBtnClick, type: "submit", value: "New Order"})
-	                    )
+	                React.createElement("div", {className: "tracking-info"}, 
+	                  React.createElement("p", {className: "success"}, "We have recieved your order successfully."), 
+	                  React.createElement("ul", {className: "tracking-data"}, 
+	                    React.createElement("li", null, "Tracking Nr.: ", React.createElement("span", {className: "trackingNr"}, this.props.trackingNr)), 
+	                    React.createElement("li", null, "PIN: ", React.createElement("span", {className: "pinCode"}, this.props.pinCode))
 	                  )
+	                ), 
+	                React.createElement("ul", {className: "form submit"}, 
+	                  React.createElement("li", {className: "row"}, 
+	                      React.createElement("input", {className: "btn btn-back", onClick: this.props.onBackBtnClick, type: "submit", value: "New Order"})
+	                  )
+	                )
 	            )
 	        );
 	    }

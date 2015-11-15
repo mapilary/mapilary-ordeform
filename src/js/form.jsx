@@ -16,8 +16,8 @@ module.exports = React.createClass({
         note       = ReactDOM.findDOMNode(this.refs.note);
 
     if (address.state.userInput.length === 0) {
-        this.props.onError(new Error('Please enter valid address'));
-        return;
+        //this.props.onError(new Error('Please enter valid address'));
+        //return;
     }
 
     this.props.onOrderSubmit({
@@ -25,7 +25,7 @@ module.exports = React.createClass({
       name: name.value.trim(),
       surname: surname.value.trim(),
       shopName: window.mapilary.config.shopName,
-      shopAddress: window.mapilary.config.shopAddress,
+      stockAddress: window.mapilary.config.stockAddress,
       consigneeAddress: address.state.userInput,
       consigneePhoneNr: phoneNr.value.trim(),
       consigneeEmail: email.value.trim(),
@@ -78,7 +78,7 @@ module.exports = React.createClass({
             <label>Email</label>
             <div className="input-group">
                 <span className="icon input-icon email-icon"></span>
-                <input name="email" className="form-control email" type="email" placeholder="john.doe@mail.com" ref="email" required="true"/>
+                <input name="email" className="form-control email" type="email" placeholder="john.doe@mail.com" ref="email"/>
             </div>
           </li>
           <li className="row">

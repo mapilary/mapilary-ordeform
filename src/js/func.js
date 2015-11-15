@@ -61,8 +61,9 @@ function buildDeliveryOrder (request) {
         note: request.note,
         state: 'UNSPECIFIED_TIME_WINDOWS',
         pinCode: getRandomInt(1000, 9999),
-        deliveryAddress: {
-            text: request.shopAddress
+        stockAddress: request.stockAddress,
+        preliminaryAddress: {
+          text: request.consigneeAddress
         }
     };
 }
@@ -99,7 +100,7 @@ function publishDispatch (request, options) {
 
 function createDelivery (request, options) {
     var order = buildDeliveryOrder(request);
-    return $.ajax(options.baseUrl + 'deliveries', {
+    return $.ajax(options.baseUrl + 'deliveries/new', {
         data: JSON.stringify(order),
         contentType: 'application/json',
         type: 'POST',

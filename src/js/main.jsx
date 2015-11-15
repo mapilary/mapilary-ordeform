@@ -11,35 +11,34 @@ var React            = require('react'),
 
 module.exports = React.createClass({
   getInitialState: function() {
-    var page = 'login';
-    console.log(mapilary.accessToken, mapilary.tokenExpire)
-    if (mapilary.accessToken && moment().isBefore(moment.unix(mapilary.tokenExpire))) {
+    var page = 'login',
+        stockAddress = localStorage.getItem('form.stockAddress'),
+        accessToken  = sessionStorage.getItem('form.accessToken'),
+        tokenExpire  = sessionStorage.getItem('form.tokenExpire');
+
+    if (accessToken && moment().isBefore(moment.unix(tokenExpire))) {
         page = 'form';
+    } else {
+        accessToken = null;
+        tokenExpire = null;
     }
 
     return {
-        page: page
+        page: page,
+        accessToken: accessToken,
+        stockAddress: stockAddress || ''
     };
   },
   getNewTimeout: function (now) {
       return moment(now || new Date()).add(10, 'm').toDate();
   },
-  getDefaultProps: function () {
-      var now = moment();
-      return {
-          deadline: moment(now).add(1, 'h').toDate(),
-          voting: false,
-          onlineSince: new Date(),
-          timeout: 10
-      };
-  },
   handleOrderSubmit: function(order, options) {
     var that = this;
     this.refs.spinner.setState({ loading: true });
-    order.deadline = this.props.deadline;
+    order.stockAddress = this.state.stockAddress;
 
     return mapilaryFnc.createDelivery(order, {
-        accessToken: mapilary.accessToken,
+        accessToken: this.state.accessToken,
         baseUrl: options.baseUrl
     })
     .done(function (delivery) {
@@ -54,28 +53,38 @@ module.exports = React.createClass({
     });
   },
   handleSettings: function (props) {
-    this.setProps(props);
+    Object.keys(props).forEach(function (name) {
+      localStorage.setItem('form.' + name, props[name]);
+    });
+    this.setState(props);
     this.showFormPage();
   },
   handleLogout: function () {
-    mapilary.tokenExpire = null;
-    mapilary.accessToken = null;
     sessionStorage.removeItem('form.accessToken');
     sessionStorage.removeItem('form.tokenExpire');
+    this.setState({ accessToken: null });
     this.showLoginPage();
   },
   handleLogin: function (auth) {
-    mapilary.tokenExpire = auth.tokenExpire;
-    mapilary.accessToken = auth.accessToken;
+    var page = 'form';
+
     sessionStorage.setItem('form.accessToken', auth.accessToken);
     sessionStorage.setItem('form.tokenExpire', auth.tokenExpire.unix());
 
-    this.setState({page: 'form'});
+    if (!this.state.stockAddress) {
+      page = 'settings';
+    }
+
+    this.setState({
+      page: page,
+      accessToken: auth.accessToken
+    });
   },
   showLoginPage: function () {
     this.setState({page: 'login'});
   },
   showSettingsPage: function () {
+    console.log('[DEBUG]: show settings page');
     this.setState({page: 'settings'});
   },
   showFormPage: function() {
@@ -91,8 +100,8 @@ module.exports = React.createClass({
       <div className={classes}>
         <LoginPage onLogin={this.handleLogin}/>
         <div className="pagewrap">
-            <SettingsPage onSet={this.handleSettings} deadline={this.props.deadline} onlineSince={this.props.onlineSince} timeout={this.props.timeout} />
-            <OrderPage baseUrl={this.state.baseUrl} onLogoutBtnClick={this.handleLogout} onOrderSubmit={this.handleOrderSubmit} />
+            <SettingsPage stockAddress={this.state.stockAddress} onSet={this.handleSettings} onLogout={this.handleLogout} deadline={this.props.deadline} onlineSince={this.props.onlineSince} timeout={this.props.timeout} />
+            <OrderPage baseUrl={this.state.baseUrl} onSettingsBtnClick={this.showSettingsPage} onOrderSubmit={this.handleOrderSubmit} />
             <ConfirmationPage onBackBtnClick={this.showFormPage} trackingNr={this.state.trackingNr} pinCode={this.state.pinCode}/>
         </div>
         <Spinner ref="spinner"/>
