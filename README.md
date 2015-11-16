@@ -1,7 +1,7 @@
 # mapilary-orderform
-simulation of last step of checkout process
+form for ordering Mapilary delivery services
 
-All files are within www folder.
+![screenshot](/screenshot.png "screenshot")
 
 ## How to install
 
