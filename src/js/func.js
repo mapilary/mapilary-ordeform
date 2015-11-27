@@ -60,7 +60,6 @@ function buildDeliveryOrder (request) {
         deliveryDate: now,
         note: request.note,
         state: 'UNSPECIFIED_TIME_WINDOWS',
-        pinCode: getRandomInt(1000, 9999),
         stockAddress: request.stockAddress,
         preliminaryAddress: {
           text: request.consigneeAddress
@@ -109,7 +108,6 @@ function createDelivery (request, options) {
         }
     })
     .done(function (delivery) {
-      delivery.pinCode = order.pinCode;
       return delivery;
     });
 }
