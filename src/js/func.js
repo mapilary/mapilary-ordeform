@@ -59,8 +59,11 @@ function buildDeliveryOrder (request) {
         priority: 2,
         deliveryDate: now,
         note: request.note,
-        state: 'UNSPECIFIED_TIME_WINDOWS',
+        // state: 'UNSPECIFIED_TIME_WINDOWS',
         stockAddress: request.stockAddress,
+        contactName: [request.name, request.surname].join(' '),
+        contactEmail: request.consigneeEmail,
+        contactPhone: request.consigneePhoneNr,
         preliminaryAddress: {
           text: request.consigneeAddress
         }
