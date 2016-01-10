@@ -11,7 +11,7 @@
           baseUrl = 'https://api.mapilary.com/test/';
           break;
         case 'dev.mapilary.com':
-          baseUrl = 'https://api.mapilary.com/dev/';
+          baseUrl = 'http://api2.mapilary.com/dev/';
           break;
         case 'test.mapilary.com':
           baseUrl = 'https://api.mapilary.com/test/';
