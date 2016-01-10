@@ -23,7 +23,7 @@ module.exports = React.createClass({
             username: username.value,
             company: company.value,
             password: password.value,
-            baseUrl: mapilary.config.baseUrl
+            baseUrl: mapilary.baseUrl
         }).then(function (auth) {
             password.value = '';
             //localStorage.setItem('form.username', username.value);
@@ -37,7 +37,7 @@ module.exports = React.createClass({
     },
     render: function () {
         return (
-            <div className="page-login">
+            <div id="page-login">
             <div className="headr">
                 <h2>Login</h2>
                 <Notify ref="notify"/>

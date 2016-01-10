@@ -133,7 +133,7 @@ ul, form, label, input, textarea, select,  .half {
         color: @white;
     }
 
-    label, input {
+    label, input, textarea {
         font-family: sans-serif;
     }
 
@@ -141,20 +141,20 @@ ul, form, label, input, textarea, select,  .half {
         padding: 4em 5em 0;
     }
 
-    &.confirm {
+    &[data-page="confirm"] {
         .pagewrap {
             transform: translate3d(-2*@pageWidth, 0, 0);
         }
     }
 
-    &.settings {
+    &[data-page="settings"] {
         .pagewrap {
             transform: translate3d(0, 0, 0);
         }
     }
 
-    &.login {
-        .page-login {
+    &[data-page="login"] {
+        #page-login {
             transform: translate3d(0, 0, 0);
         }
     }
@@ -175,33 +175,9 @@ ul, form, label, input, textarea, select,  .half {
         float: left;
         height: 100%;
         width: @pageWidth;
-
-        .form-container {
-            padding: 0 2em;
-            // height: @formHeight;
-            ul.form {
-                // height: 85%;
-                &.submit {
-                    // height: auto;
-                    // margin: 4em auto;
-                    position: absolute;
-                    left: 0;
-                    bottom: 0;
-                    right: 0;
-                    width: 100%;
-                    padding: 0 2em;
-
-                    .row {
-                        margin: 0 auto;
-                        margin-bottom: 3em;
-                        width: 75%;
-                    }
-                }
-            }
-        }
     }
 
-    .page-login {
+    #page-login {
         position: absolute;
         background-color: @grey;
         height: 100%;
@@ -218,7 +194,7 @@ ul, form, label, input, textarea, select,  .half {
         }
     }
 
-    .page-settings {
+    #page-settings {
         .form-container {
             .voting {
                 float: right;
@@ -230,12 +206,27 @@ ul, form, label, input, textarea, select,  .half {
     }
 }
 
-ul.form {
+.form {
     width: 75%;
     margin: 0 auto;
     padding: 0;
     // padding: 1em;
     list-style-type: none;
+
+    &.submit {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        // padding: 0 2em;
+
+        .row {
+            margin: 0 auto;
+            margin-bottom: 3em;
+            width: 75%;
+        }
+    }
 
     .row {
         margin-bottom: 1.5em;
@@ -276,6 +267,7 @@ ul.form {
     }
 
     input {
+        height: 100%;
         width: 100%;
         padding: .8rem;
         border-radius: 3px;
@@ -447,28 +439,45 @@ ul.form {
     text-align: center;
 }
 
-
-.tracking-info {
-  width: 75%;
-  margin: 3em auto;
-  font-size: 2em;
+#page-confirmation {
   color: @white;
   text-align: left;
 
   .success {
+    font-size: 2em;
     text-align: center;
+  }
+
+  .tracking-info {
+    font-size: 2em;
+    margin: 3em auto 0;
+  }
+
+  .tracking-desc {
+    padding-right: 3em;
   }
 
   .trackingNr, .pinCode {
     color: @red;
   }
 
-  .tracking-data {
-    margin: 1em 0;
-    padding: 0;
-    line-height: 1.5em;
-    list-style-type: none;
-    text-align: left;
+  .timeslotsLink {
+    // margin-top: 2em;
+    margin: 2em auto 0;
+    text-align: center;
+    a {
+      font-size: 2em;
+    }
+    a:link {
+      color: @white;
+      text-decoration: underline;
+    }
+    a:visited {
+      color: @white;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   }
-  // background: #ccc;
 }

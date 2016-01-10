@@ -4,21 +4,33 @@ var React = require('react');
 
 module.exports = React.createClass({
     render: function () {
+        var timeslotsLink = window.mapilary.widgetUrl + '#/timeslots/' + this.props.trackingNr + '?pinCode=' + this.props.pinCode;
         return (
-            <div className="page page-confirmation">
+            <div className="page" id="page-confirmation">
                 <div className="headr">
                   <h2>Order sent</h2>
                 </div>
-                <div className="tracking-info">
+                <div className="form-container">
                   <p className="success">We have recieved your order successfully.</p>
-                  <ul className="tracking-data">
-                    <li>Tracking Nr.: <span className="trackingNr">{this.props.trackingNr}</span></li>
-                    <li>PIN: <span className="pinCode">{this.props.pinCode}</span></li>
-                  </ul>
+                  <div className="tracking">
+                    <table className="tracking-info">
+                      <tbody>
+                        <tr>
+                          <td className="tracking-desc">Tracking Nr.:</td>
+                          <td><span className="trackingNr">{this.props.trackingNr}</span></td>
+                        </tr>
+                        <tr>
+                          <td>PIN:</td>
+                          <td><span className="pinCode">{this.props.pinCode}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p className="timeslotsLink"><a target="_blank" href={timeslotsLink}>Set timeslots for this delivery</a></p>
+                  </div>
                 </div>
                 <ul className="form submit">
                   <li className="row">
-                      <input className="btn btn-back" onClick={this.props.onBackBtnClick} type="submit" value="New Order"/>
+                      <input className="btn btn-submit" onClick={this.props.onBackBtnClick} type="submit" value="New Order"/>
                   </li>
                 </ul>
             </div>

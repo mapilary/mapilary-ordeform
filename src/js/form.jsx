@@ -24,8 +24,6 @@ module.exports = React.createClass({
       trackingNr: trackingNr.value.trim(),
       name: name.value.trim(),
       surname: surname.value.trim(),
-      shopName: window.mapilary.config.shopName,
-      stockAddress: window.mapilary.config.stockAddress,
       consigneeAddress: address.state.userInput,
       consigneePhoneNr: phoneNr.value.trim(),
       consigneeEmail: email.value.trim(),

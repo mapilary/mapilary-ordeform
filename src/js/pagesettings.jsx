@@ -31,7 +31,7 @@ module.exports = React.createClass({
     },
     render: function () {
         return (
-            <div className="page page-settings">
+            <div className="page" id="page-settings">
                 <div className="headr">
                   <h2>Settings</h2>
                   <Notify ref="notify"/>

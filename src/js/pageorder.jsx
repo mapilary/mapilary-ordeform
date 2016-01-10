@@ -5,20 +5,14 @@ var React  = require('react'),
     Form   = require('./form');
 
 module.exports = React.createClass({
-    getInitialState: function() {
-      return {
-          baseUrl: window.mapilary.config.baseUrl
-      };
-    },
-
     componentDidMount: function() {
-      if (!this.state.baseUrl) {
+      if (!window.mapilary.baseUrl) {
           this.onError(new Error('Unsupported domain: ' + window.location.hostname));
       }
     },
     onOrderSubmit: function (order) {
         var that = this;
-        this.props.onOrderSubmit(order, { baseUrl: this.state.baseUrl })
+        this.props.onOrderSubmit(order)
         .done(function (resp) {
               that.clearError()
               that.refs.orderForm.reset();
@@ -42,7 +36,7 @@ module.exports = React.createClass({
     },
     render: function () {
         return (
-            <div className="page">
+            <div className="page" id="page-order">
               <div className="headr">
                 <span className="btn btn-settings" onClick={this.props.onSettingsBtnClick}></span>
                 <h2>Order delivery</h2>

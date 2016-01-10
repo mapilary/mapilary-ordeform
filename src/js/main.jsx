@@ -39,7 +39,7 @@ module.exports = React.createClass({
 
     return mapilaryFnc.createDelivery(order, {
         accessToken: this.state.accessToken,
-        baseUrl: options.baseUrl
+        baseUrl: mapilary.baseUrl
     })
     .done(function (delivery) {
         that.setState({
@@ -94,14 +94,14 @@ module.exports = React.createClass({
     this.setState({page: 'confirm'});
   },
   render: function() {
-    var classes = ['orderform', this.state.page].join(' ');
+    // var classes = ['orderform', this.state.page].join(' ');
 
     return (
-      <div className={classes}>
+      <div className='orderform' data-page={this.state.page}>
         <LoginPage onLogin={this.handleLogin}/>
         <div className="pagewrap">
             <SettingsPage stockAddress={this.state.stockAddress} onSet={this.handleSettings} onLogout={this.handleLogout} deadline={this.props.deadline} onlineSince={this.props.onlineSince} timeout={this.props.timeout} />
-            <OrderPage baseUrl={this.state.baseUrl} onSettingsBtnClick={this.showSettingsPage} onOrderSubmit={this.handleOrderSubmit} />
+            <OrderPage onSettingsBtnClick={this.showSettingsPage} onOrderSubmit={this.handleOrderSubmit} />
             <ConfirmationPage onBackBtnClick={this.showFormPage} trackingNr={this.state.trackingNr} pinCode={this.state.pinCode}/>
         </div>
         <Spinner ref="spinner"/>
