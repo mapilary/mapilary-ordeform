@@ -1,3 +1,5 @@
+@import "icons";
+
 /* common styles */
 @pages: 3;
 @pageHeight: 84em;
@@ -292,70 +294,23 @@ ul, form, label, input, textarea, select,  .half {
     }
 
     .input-group {
-        display: table;
+        display: flex;
         position: relative;
         width: 100%;
-        border-collapse: separate;
 
         .input-icon {
-            display: table-cell;
             border-radius: 3px;
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
         }
 
         .form-control {
-            display: table-cell;
         }
 
         input {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
         }
-    }
-
-    /* iconst for inputs, textareas, selects */
-
-    .icon {
-        background: url("../i/form-icons.png") 0 0 no-repeat @white;
-        padding-left: 2.4em;
-    }
-
-    .name-icon {
-        background-position: -5px -2px;
-    }
-
-    .address-icon {
-        background-position: -5px -65px;
-    }
-
-    .info-icon {
-        background-position: -5px -143px;
-    }
-
-    /* textaread override */
-    textarea.info-icon {
-        background: url("../i/textarea-icon.png") -5px 0 no-repeat @white;
-    }
-
-    .shop-icon {
-        background-position: -5px -217px;
-    }
-
-    .phone-nr-icon {
-        background-position: -5px -293px;
-    }
-
-    .email-icon {
-        background-position: -5px -355px;
-    }
-
-    .tracking-nr-icon {
-        background-position: -5px -411px;
-    }
-
-    .padlock-icon {
-        background-position: -5px -462px;
     }
 
     .note {
