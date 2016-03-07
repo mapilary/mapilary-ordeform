@@ -8,6 +8,7 @@
 @white: #fff;
 @red: #ef3e23;
 @grey: #494545;
+@greyLite: #494545;
 
 body {
     font-size: 10px;
@@ -402,10 +403,14 @@ ul, form, label, input, textarea, select,  .half {
     font-size: 2em;
     text-align: center;
   }
+  
+  .tracking {
+    margin: 6em auto;    
+  }
 
   .tracking-info {
     font-size: 2em;
-    margin: 3em auto 0;
+    margin: 0 auto;
   }
 
   .tracking-desc {
@@ -416,23 +421,44 @@ ul, form, label, input, textarea, select,  .half {
     color: @red;
   }
 
-  .timeslotsLink {
-    // margin-top: 2em;
-    margin: 2em auto 0;
+}
+
+.apps {
+  display: flex;
+  justify-content: center;
+
+  .app {
+    width: 15em;
+    height: 5em;
+    line-height: 5em;
+    margin-right: 2em;
+    color: @white;
+    background: @greyLite;
+    border-width: 2px;
+    border-style: solid;
+    border-color: @white;
+    border-radius: 5px;
     text-align: center;
-    a {
-      font-size: 2em;
-    }
-    a:link {
-      color: @white;
-      text-decoration: underline;
-    }
-    a:visited {
-      color: @white;
+    cursor: pointer;
+  }
+
+  .link {
+    &:link {
       text-decoration: none;
     }
-    a:hover {
-      text-decoration: underline;
+    &:visited {
+      text-decoration: none;
     }
+    &:hover {
+      text-decoration: none;
+      .app {
+        color: @grey;
+        background: @white;
+      }
+    }
+  }
+  
+  .text {
+    font-size: 2em;
   }
 }

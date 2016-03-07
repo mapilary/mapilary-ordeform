@@ -4,7 +4,11 @@ var React = require('react');
 
 module.exports = React.createClass({
     render: function () {
-        var timeslotsLink = window.mapilary.widgetUrl + '#/timeslots/' + this.props.trackingNr + '?pinCode=' + this.props.pinCode;
+      var pinCode    = this.props.pinCode,
+          trackingNr = this.props.trackingNr,
+          widgetUrl  = `${window.mapilary.widgetUrl}#/timeslots/${trackingNr}?pinCode=${pinCode}`,
+          trackerUrl = `${window.mapilary.trackerUrl}#/add/${trackingNr}?pinCode=${pinCode}&device=ios`;
+
         return (
             <div className="page" id="page-confirmation">
                 <div className="headr">
@@ -25,7 +29,13 @@ module.exports = React.createClass({
                         </tr>
                       </tbody>
                     </table>
-                    <p className="timeslotsLink"><a target="_blank" href={timeslotsLink}>Set timeslots for this delivery</a></p>
+                  </div>
+                  <div className="apps">
+                    <a className="link" target="_blank" href={widgetUrl}>
+                      <div className="widget app">
+                        <span className="text">Open in widget</span>
+                      </div>
+                    </a>
                   </div>
                 </div>
                 <ul className="form submit">
