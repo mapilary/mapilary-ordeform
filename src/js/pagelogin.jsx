@@ -30,8 +30,13 @@ module.exports = React.createClass({
             //localStorage.setItem('form.company', company.value);
             that.props.onLogin(auth);
         }).fail(function (err) {
-            var response = err.responseJSON || {},
+            var message;
+            if (err.status === 0) {
+                message = 'No response from server';
+            } else {
+                var response = err.responseJSON || {};
                 message = response.message || 'Wrong username or password';
+            }
             that.refs.notify.setState({message: message});
         });
     },
