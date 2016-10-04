@@ -22,7 +22,7 @@
           widgetUrl = 'http://demo.mapilary.com/widget/';
           break;
         default:
-          baseUrl = 'http://api2.mapilary.com/dev/';
+          baseUrl = 'https://api2.mapilary.com/dev/';
           widgetUrl = 'http://dev.mapilary.com/widget/';
           break;
     }
