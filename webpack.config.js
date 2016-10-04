@@ -5,11 +5,9 @@ module.exports = {
       javascript: "./index.jsx"
     },
     output: {
-        filename: 'bundle.js', //this is the default name, so you can skip it
-        //at this directory our bundle file will be available
-        //make sure port 8090 is used when launching webpack-dev-server
-        path: __dirname + '/dist',
-        publicPath: 'http://localhost:8090/assets'
+        filename: 'bundle.js',
+        path: __dirname + '/dist', // for build
+        publicPath: 'http://localhost:8080/'
     },
     module: {
         loaders: [

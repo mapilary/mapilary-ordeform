@@ -2,8 +2,9 @@
 
 (function (ns) {
     var baseUrl, widgetUrl;
+    var hostname = window.location.hostname;
 
-    switch (window.location.hostname) {
+    switch (hostname) {
         case 'localhost':
           baseUrl = 'http://localhost:4444/';
           widgetUrl = 'http://localhost:8000/mapilary-widget-ng/build/';

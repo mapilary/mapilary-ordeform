@@ -23,7 +23,7 @@ npm run build
 
 ## How to run development server
 
-The server will be started on port 8090 a you can access app on http://localhost:8090/src/
+The server will be started on port 8080 a you can access app on http://localhost:8080/src/
 
 ```
 npm run start
