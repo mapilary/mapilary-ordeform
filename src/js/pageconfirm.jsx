@@ -31,9 +31,9 @@ module.exports = React.createClass({
                     </table>
                   </div>
                   <div className="apps">
-                    <a className="link" target="_blank" href={widgetUrl}>
+                    <a className="link" target="_blank" href={trackerUrl}>
                       <div className="widget app">
-                        <span className="text">Open in widget</span>
+                        <span className="text">Open in tracker</span>
                       </div>
                     </a>
                   </div>
