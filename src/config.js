@@ -11,18 +11,18 @@
           break;
         case 'demo.mapilary.com':
           baseUrl = 'https://api.mapilary.com/test/';
-          widgetUrl = 'http://demo.mapilary.com/widget/';
-          trackerUrl = 'http://demo.mapilary.com/tracker/';
+          widgetUrl = 'https://demo.mapilary.com/widget/';
+          trackerUrl = 'https://demo.mapilary.com/tracker/';
           break;
         case 'dev.mapilary.com':
-          baseUrl = 'http://api2.mapilary.com/dev/';
-          widgetUrl = 'http://dev.mapilary.com/widget/';
-          trackerUrl = 'http://dev.mapilary.com/tracker/';
+          baseUrl = 'https://api2.mapilary.com/dev/';
+          widgetUrl = 'https://dev.mapilary.com/widget/';
+          trackerUrl = 'https://dev.mapilary.com/tracker/';
           break;
         case 'test.mapilary.com':
           baseUrl = 'https://api.mapilary.com/test/';
-          widgetUrl = 'http://demo.mapilary.com/widget/';
-          trackerUrl = 'http://demo.mapilary.com/tracker/';
+          widgetUrl = 'https://demo.mapilary.com/widget/';
+          trackerUrl = 'https://demo.mapilary.com/tracker/';
           break;
         case 'xpressgo.com':
           baseUrl = 'https://api.xpressgo.com/v2/';
