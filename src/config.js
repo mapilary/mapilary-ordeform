@@ -14,11 +14,6 @@
           widgetUrl = 'https://demo.mapilary.com/widget/';
           trackerUrl = 'https://demo.mapilary.com/tracker/';
           break;
-        case 'dev.mapilary.com':
-          baseUrl = 'https://api2.mapilary.com/dev/';
-          widgetUrl = 'https://dev.mapilary.com/widget/';
-          trackerUrl = 'https://dev.mapilary.com/tracker/';
-          break;
         case 'test.mapilary.com':
           baseUrl = 'https://api.mapilary.com/test/';
           widgetUrl = 'https://demo.mapilary.com/widget/';
@@ -28,6 +23,11 @@
           baseUrl = 'https://api.xpressgo.com/v2/';
           widgetUrl = 'https://xpressgo.com/widget/';
           trackerUrl = 'https://xpressgo.com/tracker/';
+          break;
+        default:
+          baseUrl = '/api/';
+          widgetUrl = '/widget/';
+          trackerUrl = '/tracker/';
           break;
     }
 
